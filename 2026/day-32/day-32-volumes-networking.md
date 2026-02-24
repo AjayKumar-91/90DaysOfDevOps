@@ -92,37 +92,95 @@ Write in your notes: What is the difference between a named volume and a bind mo
 
 
 
+
+
 **Task 4: Docker Networking Basics**
 
 List all Docker networks on your machine
 
+<img width="1108" height="183" alt="image" src="https://github.com/user-attachments/assets/c0677d35-7bd7-477f-94b1-478bf9fa57c3" />
+
+
 Inspect the default bridge network
+
+<img width="1600" height="759" alt="image" src="https://github.com/user-attachments/assets/80dc7f07-697b-43a7-b1e8-de5c663f3760" />
+
 
 Run two containers on the default bridge — can they ping each other by name?
 
+<img width="1412" height="163" alt="image" src="https://github.com/user-attachments/assets/4726688c-3782-42df-8e13-a643209ed99d" />
+
+
 Run two containers on the default bridge — can they ping each other by IP?
+
+<img width="1600" height="521" alt="image" src="https://github.com/user-attachments/assets/88c47c2d-6f9a-4dc2-85a1-e501910ef078" />
+
+
+<img width="1600" height="258" alt="image" src="https://github.com/user-attachments/assets/9530995a-5e31-46fc-bff1-e858739e4260" />
+
 
 
 **Task 5: Custom Networks**
 
 Create a custom bridge network called my-app-net
 
+<img width="1159" height="63" alt="image" src="https://github.com/user-attachments/assets/5b35a617-cdc6-4b3d-b778-97a74a0afb1a" />
+
+
 Run two containers on my-app-net
+
+<img width="1318" height="273" alt="image" src="https://github.com/user-attachments/assets/02c4b0af-88a9-497d-8769-a9de7a087a22" />
+
 
 Can they ping each other by name now?
 
+<img width="1600" height="302" alt="image" src="https://github.com/user-attachments/assets/d074062b-0b34-439c-9b8a-659b94b4cb97" />
+
+
+<img width="1600" height="358" alt="image" src="https://github.com/user-attachments/assets/c708266c-f070-40a6-9b15-3ba792aa2dcf" />
+
+
 Write in your notes: Why does custom networking allow name-based communication but the default bridge doesn't?
+
+Custom bridge networks:
+
+Have built-in DNS
+
+Support name-based communication
+
+Better isolation
+
+Recommended for microservices
+
+Default bridge:
+
+No automatic DNS resolution
+
+
+
 
 
 **Task 6: Put It Together**
 
 Create a custom network
 
+<img width="1215" height="120" alt="image" src="https://github.com/user-attachments/assets/9241c38f-7718-42ed-ac25-0bd35fca9db3" />
+
+
 Run a database container (MySQL/Postgres) on that network with a volume for data
+
+<img width="1600" height="217" alt="image" src="https://github.com/user-attachments/assets/e7a10a59-4cdb-4015-b693-af1d83d4f540" />
+
 
 Run an app container (use any image) on the same network
 
+<img width="1600" height="199" alt="image" src="https://github.com/user-attachments/assets/881a9032-1a51-407e-a92d-a8f8da5bafbe" />
+
+
+
+
 Verify the app container can reach the database by container name
+
 
 
 

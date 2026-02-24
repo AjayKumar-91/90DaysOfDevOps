@@ -181,8 +181,30 @@ Run an app container (use any image) on the same network
 
 Verify the app container can reach the database by container name
 
+<img width="1366" height="248" alt="image" src="https://github.com/user-attachments/assets/9862d16c-73e2-459e-8375-74ae44e37001" />
 
 
+<img width="1600" height="760" alt="image" src="https://github.com/user-attachments/assets/e94bf720-c79f-45e0-85f7-d33ac2b58e36" />
+
+
+<img width="1600" height="513" alt="image" src="https://github.com/user-attachments/assets/2994dee3-bf5a-489b-bdd7-65bcb01ea3e8" />
+
+<img width="1010" height="255" alt="image" src="https://github.com/user-attachments/assets/ddc06cf8-1c03-4e3e-99b1-c34b3ea120f3" />
+
+
+Final Notes for Your Markdown File
+
+Write:
+
+What happened without volume? → Data lost
+
+What happened with volume? → Data persisted
+
+Difference between volume & bind mount
+
+Default bridge vs custom bridge
+
+Why custom networks are production ready
 
 
 

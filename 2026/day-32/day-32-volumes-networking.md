@@ -32,15 +32,30 @@ Without a volume, this folder is destroyed when container is removed.
 
 Create a named volume
 
+<img width="1380" height="162" alt="image" src="https://github.com/user-attachments/assets/2069ade9-3c43-4978-bc5b-fbc1b3e18d0a" />
+
+
 Run the same database container, but this time attach the volume to it
+
+<img width="1600" height="579" alt="image" src="https://github.com/user-attachments/assets/e31ca035-11c0-4ec6-af17-cc0ba6ff9a3c" />
+
 
 Add some data, stop and remove the container
 
+<img width="1376" height="152" alt="image" src="https://github.com/user-attachments/assets/0088b5da-228d-4948-8c7d-41db42aa2ecc" />
+
+
 Run a brand new container with the same volume
+
+<img width="1600" height="637" alt="image" src="https://github.com/user-attachments/assets/6c509e36-65ef-4d80-a45f-d2b8af40a3fd" />
+
 
 Is the data still there?
 
 Verify: docker volume ls, docker volume inspect
+
+<img width="1570" height="313" alt="image" src="https://github.com/user-attachments/assets/a0e98ea6-57b8-4064-90fe-4e943e57c8bc" />
+
 
 
 **Task 3: Bind Mounts**
@@ -87,6 +102,7 @@ Run a database container (MySQL/Postgres) on that network with a volume for data
 Run an app container (use any image) on the same network
 
 Verify the app container can reach the database by container name
+
 
 
 

@@ -1,0 +1,7 @@
+# docker build and run with docker-compose
+services:
+  nginx:
+    image: nginx:latest
+    container_name: compose-nginx
+    ports:
+      - "8586:80"

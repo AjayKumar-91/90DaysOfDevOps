@@ -33,10 +33,9 @@ Stop it with docker compose down
 
 
 
-Task 3: Two-Container Setup
+**Task 3: Two-Container Setup**
 
 Write a docker-compose.yml that runs:
-
 
 A WordPress container
 
@@ -52,7 +51,44 @@ WordPress should connect to MySQL using the service name
 
 Start it, access WordPress in your browser, and set it up.
 
+docker compose up -d
+
+http://localhost:8090
+
+<img width="1600" height="778" alt="image" src="https://github.com/user-attachments/assets/9a1ac1e7-da32-4950-bccc-77c8d6805b86" />
+
 Verify: Stop and restart with docker compose down and docker compose up — is your WordPress data still there?
+
+docker compose down
+
+docker compose up -d
+
+MySQL uses named volume mysql_data
+
+Compose preserves volumes unless removed explicitly
+
+<img width="1600" height="826" alt="image" src="https://github.com/user-attachments/assets/e09648dd-2590-41ab-9ab2-d6927ee82269" />
+
+<img width="1600" height="799" alt="image" src="https://github.com/user-attachments/assets/9f7d669b-a008-460f-8dc4-9c257943e5d5" />
+
+
+Task 4: Compose Commands
+
+Practice and document these:
+
+Start services in detached mode
+
+View running services
+
+View logs of all services
+
+View logs of a specific service
+
+Stop services without removing
+
+Remove everything (containers, networks)
+
+Rebuild images if you make a change
 
 
 

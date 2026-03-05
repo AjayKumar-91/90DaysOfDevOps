@@ -1,0 +1,26 @@
+---
+name: Ajay Kumar
+role: Devops Engineer
+
+experience_years:
+  total_it: 7+
+  java: 4+
+  java_support: 3+
+  spring_boot: 2+
+  linux: 2+
+  shell_script: 2+
+  docker: 1+
+  github: 2+
+  network: 1+
+
+learning: true
+
+tools:
+  - Docker
+  - Github
+  - Linux
+  - Jenkins
+  - Kibana
+  - Kubernetes
+
+hobbies: [learning-devops, cricket, carrom]

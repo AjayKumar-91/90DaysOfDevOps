@@ -1,0 +1,24 @@
+---
+server:
+  name: web-server
+  ip: 192.168.1.10
+  port: 8080
+
+database:
+  host: db-server
+  name: devops_db
+  credentials:
+    user: admin
+    password: admin123
+
+startup_script_block: |
+  #!/bin/bash
+  echo "Starting server..."
+  docker start nginx
+  echo "Server started"
+
+startup_script_fold: >
+  #!/bin/bash
+  echo "Starting server..."
+  docker start nginx
+  echo "Server started"

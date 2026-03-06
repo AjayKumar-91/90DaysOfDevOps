@@ -7,7 +7,7 @@ github-actions-practice
 
 .github/workflows/hello.yml
 
-Task 1: Set Up
+## Task 1: Set Up
 
 Create a new public GitHub repository called github-actions-practice
 
@@ -18,7 +18,7 @@ Create the folder structure: .github/workflows/
 <img width="1600" height="807" alt="image" src="https://github.com/user-attachments/assets/4f08f3fb-3bf3-4c01-b0b7-ac89b0bf6b68" />
 
 
-Task 2: Hello Workflow
+## Task 2: Hello Workflow
 
 .github/workflows/hello.yml
 
@@ -61,7 +61,7 @@ Verify: Is it green? Click into the job and read every step.
 
 
 
-Task 3: Understand the Anatomy
+## Task 3: Understand the Anatomy
 
 Look at your workflow file and write in your notes what each key does:
 
@@ -118,7 +118,7 @@ Example:
 name: Checkout Repository
 
 
-Task 4: Add More Steps
+## Task 4: Add More Steps
 
 Update hello.yml to also:
 
@@ -137,7 +137,7 @@ Updated hello.yml
 
 
 
-Task 5: Break It On Purpose 
+## Task 5: Break It On Purpose 
 
 Add a step that runs a command that will fail (e.g., exit 1 or a misspelled command)
 
@@ -146,6 +146,10 @@ Push and observe what happens in the Actions tab
 Fix it and push again
 
 Write in your notes: What does a failed pipeline look like? How do you read the error?
+
+<img width="1600" height="857" alt="image" src="https://github.com/user-attachments/assets/e6e5502d-5c7d-4b4b-bf77-5f9fd85ea560" />
+
+<img width="1600" height="857" alt="image" src="https://github.com/user-attachments/assets/2dae17dc-213b-4255-95fd-8bf03519a18a" />
 
 ## Workflow YAML
 

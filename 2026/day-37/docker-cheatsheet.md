@@ -1,88 +1,190 @@
 # Docker Cheat Sheet
 
-## Container Commands
+A quick reference for commonly used Docker commands.
 
-docker run nginx              # Run container
+---
 
-docker run -d nginx           # Run in detached mode
+# 1. Container Commands
 
-docker ps                     # List running containers
+Run a container (interactive mode)
 
-docker ps -a                  # List all containers
+docker run -it ubuntu bash
 
-docker stop <container>       # Stop container
+Run container in background (detached)
 
-docker rm <container>         # Remove container
+docker run -d nginx
 
-docker exec -it <container> bash  # Enter container
+List running containers
 
-docker logs <container>       # View container logs
+docker ps
 
-## Image Commands
+List all containers
 
-docker build -t myimage .     # Build image
+docker ps -a
 
-docker images                 # List images
+Stop container
 
-docker pull nginx             # Pull image from Docker Hub
+docker stop <container_id>
 
-docker push username/image    # Push image to Docker Hub
+Remove container
 
-docker tag image newname      # Tag image
+docker rm <container_id>
 
-docker rmi image              # Remove image
+Execute command inside running container
 
-## Volume Commands
+docker exec -it <container_id> bash
 
-docker volume create myvol    # Create volume
+View container logs
 
-docker volume ls              # List volumes
+docker logs <container_id>
 
-docker volume inspect myvol   # Inspect volume
+---
 
-docker volume rm myvol        # Remove volume
+# 2. Image Commands
 
-## Network Commands
+Pull image from Docker Hub
 
-docker network create mynet   # Create network
+docker pull nginx
 
-docker network ls             # List networks
+List images
 
-docker network inspect mynet  # Inspect network
+docker images
 
-docker network connect mynet container
+Build image from Dockerfile
 
-## Docker Compose Commands
+docker build -t my-image .
 
-docker compose up             # Start services
+Tag image
 
-docker compose up -d          # Start in background
+docker tag my-image username/my-image:latest
 
-docker compose down           # Stop services
+Push image to Docker Hub
 
-docker compose ps             # List services
+docker push username/my-image:latest
 
-docker compose logs           # View logs
+Remove image
 
-docker compose build          # Build images
+docker rmi <image_id>
 
-## Cleanup Commands
+---
 
-docker system prune           # Remove unused resources
+# 3. Volume Commands
 
-docker container prune        # Remove stopped containers
+Create volume
 
-docker image prune            # Remove unused images
+docker volume create myvolume
 
-docker system df              # Show Docker disk usage
+List volumes
 
-## Dockerfile Instructions
+docker volume ls
 
-FROM        # Base image
+Inspect volume
 
-RUN         # Execute command
-COPY        # Copy files
-WORKDIR     # Set working directory
-EXPOSE      # Expose port
-CMD         # Default command
-ENTRYPOINT  # Main container command
+docker volume inspect myvolume
+
+Remove volume
+
+docker volume rm myvolume
+
+Run container with volume
+
+docker run -v myvolume:/data nginx
+
+---
+
+# 4. Bind Mounts
+
+Mount local folder to container
+
+docker run -v $(pwd):/app nginx
+
+---
+
+# 5. Network Commands
+
+List networks
+
+docker network ls
+
+Create custom network
+
+docker network create mynetwork
+
+Inspect network
+
+docker network inspect mynetwork
+
+Connect container to network
+
+docker network connect mynetwork <container>
+
+---
+
+# 6. Docker Compose Commands
+
+Start services
+
+docker compose up
+
+Run in background
+
+docker compose up -d
+
+Stop services
+
+docker compose down
+
+View running services
+
+docker compose ps
+
+View logs
+
+docker compose logs
+
+Build services
+
+docker compose build
+
+---
+
+# 7. Cleanup Commands
+
+Remove unused containers/images
+
+docker system prune
+
+Check Docker disk usage
+
+docker system df
+
+---
+
+# 8. Dockerfile Instructions
+
+FROM → Base image
+
+RUN → Execute command during build
+
+COPY → Copy files from host to container
+
+WORKDIR → Set working directory
+
+EXPOSE → Document port used
+
+CMD → Default command when container starts
+
+ENTRYPOINT → Main command that always runs
+
+---
+
+# 9. Port Mapping
+
+-p 8080:80
+
+8080 = host port  
+80 = container port
+
+Access container service at:
+
+http://localhost:8080

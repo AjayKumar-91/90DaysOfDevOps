@@ -52,6 +52,9 @@ Step 1: Check out the code using actions/checkout
 
 Step 2: Print Hello from GitHub Actions!
 
+<img width="1600" height="723" alt="image" src="https://github.com/user-attachments/assets/114d0f02-3355-4467-b53a-258cc529c770" />
+
+
 Push it. Go to the Actions tab on GitHub and watch it run.
 
 Verify: Is it green? Click into the job and read every step.
@@ -62,19 +65,87 @@ Task 3: Understand the Anatomy
 
 Look at your workflow file and write in your notes what each key does:
 
-on:
+on: Defines when the workflow should run.
+
+on: push
+
+Means workflow runs every time code is pushed to the repository.
+
+jobs: Defines tasks executed in the workflow. # these are jobs inside the workflow
 
 jobs:
+  greet: # this is the name of the job
 
-runs-on:
+A workflow can have multiple jobs.
 
-steps:
+runs-on: Defines the virtual machine (runner) used.
 
-uses:
+Example:
 
-run:
+# this is github runner, each job runs on a runner
 
-name: (on a step)
+runs-on: ubuntu-latest 
+
+GitHub provides a Linux environment to run the job.
+
+steps: Defines individual commands executed inside a job.
+
+Example:
+
+steps: 
+
+Each step runs sequentially.
+
+uses: Used to run prebuilt GitHub Actions.
+
+Example:
+
+uses: actions/checkout@v4
+
+This action downloads your repo code to the runner.
+
+run: Runs shell commands on the runner.
+
+Example:
+
+run: echo "Hello"
+
+
+name: (on a step) Adds a readable label for a step in the UI.
+
+Example:
+
+name: Checkout Repository
+
+
+Task 4: Add More Steps
+
+Update hello.yml to also:
+
+Print the current date and time
+
+Print the name of the branch that triggered the run (hint: GitHub provides this as a variable)
+
+List the files in the repo
+
+Print the runner's operating system
+
+Push again — watch the new run.
+
+Updated hello.yml
+
+
+
+
+Task 5: Break It On Purpose 
+
+Add a step that runs a command that will fail (e.g., exit 1 or a misspelled command)
+
+Push and observe what happens in the Actions tab
+
+Fix it and push again
+
+Write in your notes: What does a failed pipeline look like? How do you read the error?
 
 ## Workflow YAML
 

@@ -4,6 +4,6 @@ WORKDIR /app
 
 COPY app.jar app.jar
 
-EXPOSE 9595
+EXPOSE 8080
 
 CMD ["java", "-jar", "app.jar"]

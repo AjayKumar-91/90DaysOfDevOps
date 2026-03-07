@@ -4,7 +4,7 @@ services:
     build: ./app
     container_name: java-app
     ports:
-      - "8080:8080"
+      - "9595:8080"
     depends_on:
       mysql:
         condition: service_healthy

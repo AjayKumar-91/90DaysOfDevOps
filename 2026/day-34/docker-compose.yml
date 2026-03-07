@@ -11,11 +11,10 @@ services:
     networks:
       - app-network
     labels:
-      project: "day34-task"
-      service: "web"
+      - "tier=frontend"
 
   mysql:
-    image: mysql: 8.0
+    image: mysql:8.0
     
     container_name: mysql-db
     
@@ -32,12 +31,17 @@ services:
     
     networks:
       - app-network
+
       
     healthcheck:
       test: ["CMD", "mysqladmin", "ping","-h", "localhost", "-u", "root"]
       interval: 10s
       timeout: 5s
       retries: 5
+
+    labels:
+      - "tier=backend"  
+
 
   redis:
     image: redis:7
@@ -50,8 +54,7 @@ services:
       - app-network
       
     labels:
-      project: "day34-task"
-      service: "cache"
+      - "tier=cache"
 
 networks:
   app-network:

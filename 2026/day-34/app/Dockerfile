@@ -1,9 +1,16 @@
-FROM openjdk:8-jdk-alpine
+# Use Java 8 base image
+FROM eclipse-temurin:8-jdk
 
+# Set working directory
 WORKDIR /app
 
-COPY app.jar app.jar
+# Copy source code
+COPY src/ ./src/
+
+# Compile Java app
+RUN mkdir bin && javac -d bin src/Main.java
 
 EXPOSE 8080
 
-CMD ["java", "-jar", "app.jar"]
+# Command to run app
+CMD ["java", "-cp", "bin", "Main"]

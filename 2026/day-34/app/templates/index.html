@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Docker Compose App</title>
+
+    <style>
+        body{
+            font-family: Arial;
+            background:#f4f6f9;
+            text-align:center;
+        }
+
+        .container{
+            margin-top:80px;
+        }
+
+        .card{
+            background:white;
+            padding:30px;
+            border-radius:10px;
+            width:400px;
+            margin:auto;
+            box-shadow:0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h1{
+            color:#333;
+        }
+
+        .status{
+            font-size:18px;
+            margin:15px 0;
+        }
+
+        .good{
+            color:green;
+            font-weight:bold;
+        }
+
+        .bad{
+            color:red;
+            font-weight:bold;
+        }
+
+        footer{
+            margin-top:20px;
+            color:gray;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>🚀 Docker Compose App</h1>
+
+<p class="status">
+MySQL Status :
+<span class="{{ 'good' if mysql_status == 'Connected' else 'bad' }}">
+{{ mysql_status }}
+</span>
+</p>
+
+<p class="status">
+Redis Status :
+<span class="{{ 'good' if redis_status == 'Connected' else 'bad' }}">
+{{ redis_status }}
+</span>
+</p>
+
+<footer>
+Powered by Flask + Docker Compose
+</footer>
+
+</div>
+
+</div>
+
+</body>
+</html>

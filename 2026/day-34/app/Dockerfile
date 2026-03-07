@@ -1,16 +1,13 @@
-# Use Java 8 base image
-FROM eclipse-temurin:8-jdk
+FROM python:3.12-slim
 
-# Set working directory
 WORKDIR /app
 
-# Copy source code
-COPY src/ ./src/
+COPY requirements.txt .
 
-# Compile Java app
-RUN mkdir bin && javac -d bin src/Main.java
+RUN pip install --no-cache-dir -r requirements.txt
 
-EXPOSE 8080
+COPY . .
 
-# Command to run app
-CMD ["java", "-cp", "bin", "Main"]
+EXPOSE 5000
+
+CMD ["python","app.py"]

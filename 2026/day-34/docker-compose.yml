@@ -1,63 +1,49 @@
 services:
-
-  web:
-    build: ./app
-    container_name: java-app
-    ports:
-      - "9595:8080"
-    depends_on:
-      mysql:
-        condition: service_healthy
-    networks:
-      - app-network
-    labels:
-      - "tier=frontend"
-
-  mysql:
+  database:
     image: mysql:8.0
-    
-    container_name: mysql-db
-    
+    container_name: test-db
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: testdb
-
-    ports:
-    - "3306:3306"
-      
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: Test@123
     volumes:
       - mysql-data:/var/lib/mysql
-    restart: always
-    
     networks:
-      - app-network
-
-      
+      - test-net
+    restart: always
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping","-h", "localhost", "-u", "root"]
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
       interval: 10s
       timeout: 5s
-      retries: 5
+      retries: 10
+      start_period: 30s
 
-    labels:
-      - "tier=backend"  
-
+  flask:
+    build: ./app
+    container_name: flask-app
+    environment:
+      DB_HOST: database
+      DB_USER: mysql
+      DB_PASSWORD: Test@123
+      DB_NAME: mydb
+    depends_on:
+      database:
+        condition: service_healthy
+    ports:
+      - "5000:5000"
+    networks:
+      - test-net
+    restart: always
 
   redis:
-    image: redis:7
-    container_name: redis-cache
-
-    ports:
-    - "6379:6379"
-    
+    image: redis:latest
     networks:
-      - app-network
-      
-    labels:
-      - "tier=cache"
+      - test-net
+    restart: always
 
 networks:
-  app-network:
+  test-net:
 
 volumes:
   mysql-data:

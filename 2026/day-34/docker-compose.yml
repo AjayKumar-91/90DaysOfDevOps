@@ -11,22 +11,27 @@ services:
     networks:
       - app-network
     labels:
-      project: "day34"
+      project: "day34-task"
       service: "web"
 
   mysql:
-    image: mysql:8
+    image: mysql: latest
+    
     container_name: mysql-db
+    
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: testdb
+      
     volumes:
       - mysql-data:/var/lib/mysql
     restart: always
+    
     networks:
       - app-network
+      
     healthcheck:
-      test: ["CMD","mysqladmin","ping","-h","localhost"]
+      test: ["CMD", "mysqladmin", "ping","-h", "localhost", "-u", "root"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -34,10 +39,12 @@ services:
   redis:
     image: redis:7
     container_name: redis-cache
+    
     networks:
       - app-network
+      
     labels:
-      project: "day34"
+      project: "day34-task"
       service: "cache"
 
 networks:

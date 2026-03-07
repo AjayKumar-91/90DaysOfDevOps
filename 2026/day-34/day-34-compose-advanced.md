@@ -26,3 +26,9 @@
 ## Task 6: Scaling (Bonus)
 - Scaling web app to 3 replicas fails with port conflicts
 - Requires a load balancer or proxy for multiple replicas
+
+
+<img width="1599" height="478" alt="image" src="https://github.com/user-attachments/assets/49d0f626-f2d8-4b01-9dff-e880d07f229a" />
+
+<img width="1600" height="468" alt="image" src="https://github.com/user-attachments/assets/6fd9c5dc-b112-45a2-9d92-1fcbd7797cfd" />
+

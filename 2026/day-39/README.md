@@ -49,7 +49,34 @@ A pipeline has these parts — write what each one does:
 ### Task 4: Draw a Pipeline
 Draw a CI/CD pipeline for this scenario:
 > A developer pushes code to GitHub. The app is tested, built into a Docker image, and deployed to a staging server.
+Developer
+   │
+   │ Push Code
+   ▼
+GitHub Repository
+   │
+   │ Trigger Pipeline
+   ▼
+CI/CD Pipeline
+-------------------------------------------------
+Stage 1: Build
+    └── Install dependencies
+    └── Build application
 
+Stage 2: Test
+    └── Run unit tests
+    └── Run lint checks
+
+Stage 3: Docker Build
+    └── Build Docker image
+    └── Push image to DockerHub
+
+Stage 4: Deploy
+    └── Deploy container to staging server
+-------------------------------------------------
+
+Result:
+Application running on Staging Server
 Include at least 3 stages. Hand-drawn and photographed is perfectly fine.
 
 ---

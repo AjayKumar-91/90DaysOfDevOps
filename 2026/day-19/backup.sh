@@ -16,12 +16,17 @@ ARCHIVE="$DEST/backup-$DATE.tar.gz"
 tar -czf "$ARCHIVE" "$SOURCE"
 
 if [ $? -eq 0 ]; then
-  echo "Backup created successfully"
-  echo "Archive: $ARCHIVE"
-  du -h "$ARCHIVE"
+  SIZE=$(du -h "$ARCHIVE" | cut -f1)
+    echo "Backup created successfully!"
+    echo "Archive: $ARCHIVE"
+    echo "Size: $SIZE"
 else
   echo "Backup failed!"
   exit 1
 fi
 
+echo "Removing backups older than 14 days..."
+
 find "$DEST" -name "backup-*.tar.gz" -mtime +14 -delete
+
+echo "Backup process completed."

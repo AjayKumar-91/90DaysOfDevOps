@@ -9,3 +9,4 @@ echo "$(date) - Maintenance started" >> $LOGFILE
 ./backup.sh /home/abhi/data /home/abhi/backups >> $LOGFILE 2>&1
 
 echo "$(date) - Maintenance finished" >> $LOGFILE
+

@@ -2,7 +2,7 @@
 
 The core components of Linux are the kernel, the user space (which includes the shell and applications), and the init system (systemd or traditional init), which manages the user space processes after the kernel has booted. 
 
-# 1. The Kernel**
+# 1. The Kernel
 The Linux kernel is the core of the operating system and acts as a bridge between the software and the computer's hardware. It operates in a privileged area of memory called kernel space. 
 Hardware Management: The kernel manages system resources such as the CPU, memory, and devices (disk I/O, network access).
 Process Management: It is responsible for creating, scheduling, and terminating processes, ensuring efficient multitasking.

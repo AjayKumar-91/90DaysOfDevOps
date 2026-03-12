@@ -25,6 +25,23 @@ ls -lh – List files with human-readable sizes (e.g., 1K, 234M, 2G).
 tree – View directory structure in a tree-like diagram.
 
 
+# 📂 File System Navigation (Advanced)
+
+ls -R – List directories recursively.
+
+ls -lt – Sort files by modification time.
+
+ls -ltr – Oldest files first.
+
+stat [file] – Show detailed file information (size, permissions, timestamps).
+
+realpath [file] – Show the absolute path of a file.
+
+basename [path] – Extract file name from path.
+
+dirname [path] – Extract directory path.
+
+
 # 📝 File & Directory Operations
 
 
@@ -43,6 +60,61 @@ rm -r [dir] – Remove a directory and its contents, use -rf to force removal wi
 rmdir [dir] – Remove an empty directory.
 
 ln -s [source] [link] – Create a symbolic link (shortcut) to a file.
+
+wc [file] – Count lines, words, and characters.
+
+
+# 📄 File Content Processing
+
+wc -l [file] – Count number of lines.
+
+sort [file] – Sort lines in a file.
+
+uniq [file] – Remove duplicate lines (usually used with sort).
+
+cut -d',' -f1 file.csv – Extract specific column from file.
+
+awk '{print $1}' file – Print first column of a file.
+
+sed 's/old/new/g' file – Replace text in file output.
+
+tr 'a-z' 'A-Z' – Convert lowercase to uppercase.
+
+
+# 🧾 File Metadata & Timestamps
+
+stat file – Show file metadata.
+
+file filename – Detect file type.
+
+touch -t YYYYMMDDHHMM file – Set custom timestamp.
+
+ls -lc – Show file change time.
+
+ls -lu – Show last access time.
+
+
+# 🔗 Links (Hard & Symbolic)
+
+ln file hardlink – Create hard link.
+
+ln -s file symlink – Create symbolic link.
+
+readlink symlink – Show where a symlink points.
+
+ls -li – Show inode numbers.
+
+
+# 📁 Directory Inspection
+
+du -ah – Show disk usage of all files.
+
+du -sh * – Show size of each item in current directory.
+
+du -h --max-depth=1 – Directory size summary.
+
+tree -L 2 – Show directory tree up to depth 2.
+
 
 
 # 🔍 Searching & Viewing Files
@@ -85,6 +157,66 @@ du -sh [path] – Summarize disk usage, use --max-depth=1 to check subdirectorie
 mount and umount [mountpoint] – Display or unmount file systems.
 
 lsblk – List block devices.
+
+
+# 💽 Disk & Storage Inspection (Very Useful for DevOps)
+
+df -Th – Show filesystem type.
+
+du -xh / | sort -rh | head – Find largest directories.
+
+lsblk -f – Show filesystem information.
+
+blkid – Display block device UUIDs.
+
+mount | column -t – View mounted filesystems nicely formatted.
+
+
+
+# 🔎 Finding Large Files (Production Debugging)
+
+find / -type f -size +100M – Find files larger than 100MB.
+
+find /var/log -type f -name "*.log" – Find log files.
+
+find . -type f -mtime -7 – Files modified in last 7 days.
+
+find . -empty – Find empty files/directories.
+
+
+# 🧹 File Cleanup
+
+rm -i file – Ask before deleting.
+
+rm -rf dir – Force delete directory.
+
+find . -name "*.log" -delete – Delete log files.
+
+truncate -s 0 file.log – Empty a file without deleting it.
+
+
+# 📁 Special Directories (Linux Internals)
+
+/dev – Device files.
+
+/proc – Kernel and process information.
+
+/sys – Kernel hardware interface.
+
+/tmp – Temporary files.
+
+/var/log – System logs.
+
+
+
+
+# 📊 Inodes (Important for Production Servers)
+
+df -i – Check inode usage.
+
+stat file – Show inode number.
+
+ls -i – Show inode numbers of files.
 
 
 # 📦 Archiving & Compression

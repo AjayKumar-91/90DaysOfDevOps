@@ -1,4 +1,4 @@
-#**1. What is DevOps? (The Process)**
+**1. What is DevOps? (The Process)**
    
 DevOps is a cultural approach and a set of practices that bridges the gap between software developers (Dev) and IT operations (Ops).
 
@@ -78,7 +78,9 @@ Track progress weekly and adjust, not quit
 
 **Why you are starting learning DevOps & Cloud?**
 
-Learning DevOps and Cloud is widely considered a top career move in 2026 because it combines high demand, high salaries, and future-proof skills. In short, it is the modern
+Learning DevOps and Cloud is widely considered a top career move in 2026 because it combines high demand, high salaries, and future-proof skills. In short, it is 
+
+the modern
 
 way to build, deploy, and manage software faster and more reliably. 
 
@@ -90,6 +92,12 @@ Deploy a production-style application on a Linux server with proper logs and mon
 Build a CI/CD pipeline to automate build and deployment
 
 Containerize and deploy an application using Docker & Kubernetes basics
+
+Deploy a production-grade application on Kubernetes with CI/CD pipelines.
+
+Build automation scripts for Linux servers and cloud infrastructure using Shell, Terraform, and Ansible.
+
+Gain hands-on experience with AWS services like EC2, S3, and IAM for real-world cloud deployments.
 
 
 **Why I Am Learning DevOps & Cloud**
@@ -106,7 +114,11 @@ I want a career with continuous learning, problem-solving, and impact
 
 Linux Troubleshooting & System Fundamentals (processes, services, logs, networking)
 
-CI/CD & Automation (Git, pipelines, scripting)
+Linux & Shell Scripting – troubleshooting, log analysis, automation.
+
+CI/CD & Automation (GitHub Actions, Jenkins, Docker, Kubernetes integration, pipelines, scripting)
+
+Cloud Engineering – AWS fundamentals, provisioning, networking, IAM, and storage.
 
 Containers & Orchestration (Docker, Kubernetes basics)
 
@@ -118,6 +130,27 @@ Weekdays: 2–2.5 hours per day (learning + hands-on practice)
 Weekends: 6–8 hours (live class projects, revision, troubleshooting)
 
 Total: ~15–18 hours per week
+
+
+**Consistency & Execution**
+
+Daily discipline: Follow a strict schedule, with a learning log for every task completed.
+
+Weekly review: Assess progress, identify weak areas, and adjust the plan if needed.
+
+Accountability: Push code to GitHub daily and document learning notes.
+
+Focus on practice over perfection: Implement small tasks before moving to complex projects.
+
+**Expected Outcome by Day 90**
+
+Confident in managing cloud infrastructure and Linux servers.
+
+Able to design and deploy automated CI/CD pipelines.
+
+Capable of deploying and troubleshooting production-grade applications on Kubernetes.
+
+Strong foundation for pursuing advanced DevOps certifications or real-world projects.
 
 
 

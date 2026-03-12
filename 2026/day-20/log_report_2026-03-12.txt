@@ -1,0 +1,16 @@
+Log Analysis Report - Thu Mar 12 21:23:18 IST 2026
+Log file: sample_log.log
+Total lines processed: 17
+Total errors: 6
+
+--- Top 5 Error Messages ---
+      1    Permission denied: /etc/passwd
+      1    Out of memory
+      1    File not found: /var/log/app.log
+      1    Failed to connect to database
+      1    Disk I/O error on /dev/sda1
+
+--- Critical Events ---
+10:2026-03-12 08:22:55 CRITICAL Disk space below threshold
+13:2026-03-12 08:25:10 CRITICAL Database connection lost
+18:2026-03-12 08:31:05 CRITICAL CPU temperature exceeded limit

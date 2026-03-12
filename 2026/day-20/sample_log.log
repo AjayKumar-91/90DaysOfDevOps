@@ -1,0 +1,18 @@
+# sample_log.log
+
+2026-03-12 08:15:01 INFO Server started successfully
+2026-03-12 08:16:45 ERROR Failed to connect to database
+2026-03-12 08:17:12 WARNING High memory usage detected
+2026-03-12 08:18:30 ERROR File not found: /var/log/app.log
+2026-03-12 08:19:05 INFO User login successful
+2026-03-12 08:20:12 Failed to load configuration file
+2026-03-12 08:21:47 ERROR Connection timed out
+2026-03-12 08:22:55 CRITICAL Disk space below threshold
+2026-03-12 08:23:33 ERROR Permission denied: /etc/passwd
+2026-03-12 08:24:50 INFO Backup completed
+2026-03-12 08:25:10 CRITICAL Database connection lost
+2026-03-12 08:26:22 ERROR Out of memory
+2026-03-12 08:27:30 Failed to start service xyz
+2026-03-12 08:28:41 INFO Service xyz stopped
+2026-03-12 08:29:55 ERROR Disk I/O error on /dev/sda1
+2026-03-12 08:31:05 CRITICAL CPU temperature exceeded limit

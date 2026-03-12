@@ -1,4 +1,4 @@
-**1. What is DevOps? (The Process)**   
+#1. What is DevOps? (The Process)  
 
 DevOps is a cultural approach and a set of practices that bridges the gap between software developers (Dev) and IT operations (Ops).
 DevOps is the practice of building, deploying, monitoring, and fixing software reliably by combining development and operations skills. 

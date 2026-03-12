@@ -1,47 +1,85 @@
 #!/bin/bash
-set -euo pipefail
 
-if [ "$#" -ne 2 ]; then
-    echo "Usage: $0 <log_file_path> <num_lines>"
+# -------------------------------
+# log_analyzer.sh
+# Bash script to analyze log files and generate a daily report
+# -------------------------------
+
+# Task 1: Input and Validation
+if [ $# -eq 0 ]; then
+    echo "Error: No log file provided."
+    echo "Usage: $0 <path-to-log-file>"
     exit 1
 fi
 
-log_file_path="$1"
-num_lines="$2"
+logfile="$1"
 
-# Validate num_lines is a positive integer
-if ! [[ "$num_lines" =~ ^[1-9][0-9]*$ ]]; then
-    echo "Error: num_lines must be a positive integer."
+if [ ! -f "$logfile" ]; then
+    echo "Error: File $logfile does not exist."
     exit 1
 fi
 
-if [ -e "$log_file_path" ]; then
-    echo "Error: File already exists at $log_file_path."
-    exit 1
+# $# → number of arguments
+# $1 → first argument (log file path)
+# [ -f "$1" ] → checks if it is a regular file
+
+# Task 2: Error Count
+# Count total ERROR lines
+error_count=$(grep -c "ERROR" "$logfile")
+echo "Total errors: $error_count"
+# error_count=$(grep -E "ERROR|Failed" "$logfile" | wc -l)
+# echo "Total errors: $error_count"
+
+# grep -E "ERROR|Failed" → Extended regex to match either ERROR or Failed
+# wc -l → counts number of lines
+
+# Task 3: Critical Events
+echo ""
+echo "--- Critical Events ---"
+critical_lines=$(grep -n "CRITICAL" "$logfile")
+# grep -n → prints line numbers along with the matching line
+if [ -z "$critical_lines" ]; then
+    echo "No critical events found."
+else
+    echo "$critical_lines"
 fi
 
-log_levels=("INFO" "DEBUG" "ERROR" "WARNING" "CRITICAL")
-messages=(
-    "Failed to connect to upstream"
-    "Disk usage exceeded threshold"
-    "Segmentation fault in worker process"
-    "Invalid input received"
-    "Out of memory: kill process"
-    "Health check passed"
-    "Config reloaded successfully"
-    "Request timeout after 30s"
-    "Retrying connection attempt"
-    "Cache invalidated"
-)
+# Task 4: Top 5 Error Messages
+echo ""
+echo "--- Top 5 Error Messages ---"
+top_errors=$(grep "ERROR" "$logfile" | awk '{$1=$2=$3=""; print $0}' | sort | uniq -c | sort -rn | head -5)
 
-generate_log_line() {
-    local log_level="${log_levels[$((RANDOM % ${#log_levels[@]}))]}"
-    local msg="${messages[$((RANDOM % ${#messages[@]}))]}"
-    echo "$(date '+%Y-%m-%d %H:%M:%S') [$log_level] $msg"
-}
+# awk '{$1=$2=$3=""; print $0}' → removes timestamp or first 3 columns to get the message
+# sort → sorts lines alphabetically (needed for uniq -c)
+# uniq -c → counts occurrences of each unique line
+# sort -rn → sort numerically in reverse order (highest count first)
+# head -5 → take top 5
+# wc -l < "$logfile" → counts total lines without printing the filename
 
-for ((i = 0; i < num_lines; i++)); do
-    generate_log_line >> "$log_file_path"
-done
 
-echo "Log file created at: $log_file_path with $num_lines lines."
+if [ -z "$top_errors" ]; then
+    echo "No ERROR messages found."
+else
+    echo "$top_errors"
+fi
+
+# Task 5: Generate Summary Report
+report_file="log_report_$(date +%Y-%m-%d).txt"
+
+{
+echo "Log Analysis Report - $(date)"
+echo "Log file: $logfile"
+echo "Total lines processed: $(wc -l < "$logfile")"
+echo "Total errors: $error_count"
+echo ""
+echo "--- Top 5 Error Messages ---"
+echo "$top_errors"
+echo ""
+echo "--- Critical Events ---"
+echo "$critical_lines"
+} > "$report_file"
+
+echo ""
+echo "Report generated: $report_file"
+
+# wc -l < "$logfile" → counts total lines without printing the filename

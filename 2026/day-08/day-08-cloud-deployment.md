@@ -30,6 +30,107 @@
 
 <img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/7d6f5631-1b33-4550-be0e-c438e482eb1d" />
 
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/814759b8-bbd2-4851-b5ad-778405d784bb" />
+
+# Day 08 – Cloud Server Setup: Docker, Nginx & Web Deployment
+
+## Cloud Provider
+AWS EC2
+
+## Instance Details
+
+Instance Type:
+t2.micro
+
+OS:
+Ubuntu 22.04
+
+---
+
+# SSH Connection
+
+Connected using:
+
+ssh -i devops-key.pem ubuntu@<instance-ip>
+
+Screenshot:
+ssh-connection.png
+
+---
+
+# System Update
+
+Commands used:
+
+sudo apt update
+sudo apt upgrade -y
+
+---
+
+# Docker Installation
+
+Installed Docker using:
+
+sudo apt install docker.io -y
+
+Started Docker:
+
+sudo systemctl start docker
+sudo systemctl enable docker
+
+Verified:
+
+docker --version
+
+---
+
+# Nginx Installation
+
+Installed using:
+
+sudo apt install nginx -y
+
+Started service:
+
+sudo systemctl start nginx
+sudo systemctl enable nginx
+
+Verified status:
+
+sudo systemctl status nginx
+
+---
+
+# Web Access Test
+
+Accessed from browser:
+
+http://<instance-ip>
+
+Result:
+Nginx welcome page displayed successfully.
+
+Screenshot:
+nginx-webpage.png
+
+---
+
+# Nginx Logs
+
+Viewed logs:
+
+sudo tail -n 20 /var/log/nginx/access.log
+
+Saved logs to file:
+
+sudo cp /var/log/nginx/access.log ~/nginx-logs.txt
+
+Downloaded logs:
+
+scp -i devops-key.pem ubuntu@<instance-ip>:~/nginx-logs.txt .
+
+---
+
 # Commands Used
 
 ssh  
@@ -66,10 +167,4 @@ After enabling port 80, the Nginx webpage became accessible from the browser.
 These skills are essential for real production environments.
 
 DevOps engineers frequently deploy applications on cloud servers, manage services remotely via SSH, configure firewalls/security groups, and monitor logs for debugging.
-Files
-
-
-<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/814759b8-bbd2-4851-b5ad-778405d784bb" />
-
-
 

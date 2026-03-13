@@ -121,6 +121,20 @@ Command: ls -la \~
 
 Observed: - .bashrc - .profile - .ssh
 
+## Hands-on task:
+
+### Find the largest log file in /var/log
+du -sh /var/log/* 2>/dev/null | sort -h | tail -5
+
+### Look at a config file in /etc
+cat /etc/hostname
+
+### Check your home directory
+ls -la ~
+
+<img width="1918" height="950" alt="image" src="https://github.com/user-attachments/assets/f0877420-c090-4375-bbfd-b62c56077ec1" />
+
+
 ------------------------------------------------------------------------
 
 # Part 2: Scenario-Based Practice

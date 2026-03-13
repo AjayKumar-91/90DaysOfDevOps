@@ -19,7 +19,7 @@ I would use this when exploring the base structure of the Linux system.
 
 Purpose: Contains home directories for normal users.
 
-Command: ls -l /home
+Command:  ls -l /home
 
 Observed: - abhi
 
@@ -31,7 +31,7 @@ I would use this when accessing or troubleshooting user files.
 
 Purpose: Home directory of the root (administrator) user.
 
-Command: ls -l /root
+Command:  ls -l /root
 
 Observed: - .bashrc - .profile
 
@@ -43,7 +43,7 @@ I would use this when performing administrative tasks as root.
 
 Purpose: Contains system configuration files.
 
-Command: ls -l /etc
+Command:  ls -l /etc
 
 Observed: - hostname - passwd
 
@@ -57,9 +57,9 @@ I would use this when modifying system or service configurations.
 
 Purpose: Stores system and application log files.
 
-Command: ls -l /var/log
+Command:  ls -l /var/log
 
-Observed: - syslog - auth.log
+Observed: -  syslog - auth.log
 
 Find largest logs: du -sh /var/log/\* 2\>/dev/null \| sort -h \| tail -5
 
@@ -71,7 +71,7 @@ I would use this when debugging system or application errors.
 
 Purpose: Temporary files used by applications and the OS.
 
-Command: ls -l /tmp
+Command:  ls -l /tmp
 
 Observed: - temporary files - system caches
 
@@ -147,19 +147,29 @@ Why: Restart the service after fixing the issue.
 
 ## Scenario 2: High CPU Usage
 
-Step 1: Command: top\
+Step 1: Command: 
+
+top\
 
 Why: Shows real‑time CPU usage of processes.
 
-Step 2: Command: htop\
+
+Step 2: Command: 
+
+htop\
 
 Why: Interactive process monitoring tool.
 
-Step 3: Command: ps aux --sort=-%cpu \| head -10\
+
+Step 3: Command: 
+
+ps aux --sort=-%cpu \| head -10\
 
 Why: Lists top processes consuming CPU.
 
-Step 4: Command: kill `<PID>`{=html}\
+Step 4: Command:
+
+kill `<PID>`{=html}\
 
 Why: Stop the process using excessive CPU.
 
@@ -167,15 +177,23 @@ Why: Stop the process using excessive CPU.
 
 ## Scenario 3: Finding Service Logs
 
-Step 1: Command: systemctl status docker\
+Step 1: Command: 
+
+systemctl status docker\
 
 Why: Check service status and recent logs.
 
-Step 2: Command: journalctl -u docker -n 50\
+
+Step 2: Command: 
+
+journalctl -u docker -n 50\
 
 Why: View the last 50 log lines.
 
-Step 3: Command: journalctl -u docker -f\
+
+Step 3: Command: 
+
+journalctl -u docker -f\
 
 Why: Follow logs in real time.
 
@@ -183,19 +201,27 @@ Why: Follow logs in real time.
 
 ## Scenario 4: File Permission Issue
 
-Step 1: Command: ls -l /home/user/backup.sh\
+Step 1: Command:  
+
+ls -l /home/user/backup.sh\
 
 Why: Check current file permissions.
 
-Step 2: Command: chmod +x /home/user/backup.sh\
+Step 2: Command:  
+
+chmod +x /home/user/backup.sh\
 
 Why: Add execute permission.
 
-Step 3: Command: ls -l /home/user/backup.sh\
+Step 3: Command: 
+
+ls -l /home/user/backup.sh\
 
 Why: Verify execute permission is added.
 
-Step 4: Command: ./backup.sh\
+Step 4: Command:  
+
+./backup.sh\
 
 Why: Execute the script.
 

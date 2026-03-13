@@ -1,11 +1,16 @@
-# Linux Troubleshooting Runbook
+# Day 05 – Linux Troubleshooting Runbook
+
+## Target Service / Process
+Service: ssh
+
+Reason for selection:
+SSH is a critical service used for remote server access. Troubleshooting it helps ensure connectivity and system access.
+
+
 
 # 1. Environment Basics
 
-## Check Kernel Information
-
-Command:
-uname -a 
+## Check Kernel Information  Command:  uname -a 
 
 <img width="1582" height="438" alt="image" src="https://github.com/user-attachments/assets/0b3abf19-ea56-4fc9-b570-0b54f03e9bb2" />
 

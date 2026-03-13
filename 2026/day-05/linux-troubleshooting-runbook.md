@@ -82,6 +82,10 @@ curl -I <service-endpoint>/ping I do not understand, please help me
 <img width="1600" height="405" alt="image" src="https://github.com/user-attachments/assets/5fa61138-a688-4d60-9192-43ff85aa83db" />
 
 
+<img width="1918" height="1018" alt="image" src="https://github.com/user-attachments/assets/30e2efb6-2a8f-4eb9-ada8-239c9c3410b5" />
+
+
+
 
 
 

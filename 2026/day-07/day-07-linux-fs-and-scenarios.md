@@ -1,274 +1,214 @@
-# Part 1: Linux File System Hierarchy
+# Day 07 -- Linux File System Hierarchy & Scenario-Based Practice
 
-## 1. / (Root Directory)
+## Part 1: Linux File System Hierarchy
 
-Purpose
+### / (Root Directory)
 
-The root directory is the top-level directory in Linux. All other directories and files start from here.
+Purpose: The root directory is the starting point of the Linux file
+system. All directories originate from here.
 
-Command Run -> ls -l / 
+Command: ls -l /
 
-output (varies by system): bin  boot  dev  etc  home  lib  opt  root  tmp  usr  var
+Observed: - bin - etc
 
-## 2. /home
+I would use this when exploring the base structure of the Linux system.
 
-Purpose
+------------------------------------------------------------------------
 
-Contains home directories for normal users. Each user has their own folder here.
+### /home
 
-Command Run -> ls -l /home
+Purpose: Contains home directories for normal users.
 
-<img width="642" height="78" alt="image" src="https://github.com/user-attachments/assets/1e300788-1c00-4d58-9318-232545e81399" />
+Command: ls -l /home
 
-## 3. /root
+Observed: - abhi
 
-Purpose
+I would use this when accessing or troubleshooting user files.
 
-Home directory for the root (administrator) user.
+------------------------------------------------------------------------
 
-Command Run -> ls -l /root
+### /root
 
-When I would use this
+Purpose: Home directory of the root (administrator) user.
 
-I would use this directory when managing system configuration as the root user.
+Command: ls -l /root
 
+Observed: - .bashrc - .profile
 
-## 4. /etc
+I would use this when performing administrative tasks as root.
 
-Purpose
+------------------------------------------------------------------------
 
-Stores system configuration files for the operating system and services.
+### /etc
 
-Command Run -> ls -l /etc
+Purpose: Contains system configuration files.
 
-cat /etc/hostname o/p - Abhishek
+Command: ls -l /etc
 
-<img width="882" height="82" alt="image" src="https://github.com/user-attachments/assets/f42e1dde-8d3b-4678-8b32-e1a835b26ce3" />
+Observed: - hostname - passwd
 
+Example: cat /etc/hostname
 
+I would use this when modifying system or service configurations.
 
+------------------------------------------------------------------------
 
-## /bin & /usr/bin: 
+### /var/log
 
-Essential command binaries and executable files (e.g., ls, cd).
+Purpose: Stores system and application log files.
 
-What it contains: Essential system commands required for booting and basic operation.
+Command: ls -l /var/log
 
-I would use this when… I want to know where basic Linux commands live or troubleshoot minimal systems.
+Observed: - syslog - auth.log
 
-ls -l /bin
+Find largest logs: du -sh /var/log/\* 2\>/dev/null \| sort -h \| tail -5
 
+I would use this when debugging system or application errors.
 
-## /sbin & /usr/sbin: 
+------------------------------------------------------------------------
 
-System binaries for administrative tasks, usually for the root user.
+### /tmp
 
-What it contains: User-level commands and applications (non-essential for boot).
+Purpose: Temporary files used by applications and the OS.
 
-I would use this when… I am checking installed software or command availability for users.
+Command: ls -l /tmp
 
-ls -l /usr/bin
+Observed: - temporary files - system caches
 
+I would use this when checking temporary storage or clearing disk space.
 
+------------------------------------------------------------------------
 
-## /home: User home directories for storing personal files.
+### /bin
 
-What it contains: Home directories for normal users. Each user gets their own folder here.
+Purpose: Contains essential system command binaries.
 
-I would use this when… I am managing user files, permissions, or user-specific application data.
+Command: ls -l /bin
 
-ls -l /home
+Observed: - ls - cat
 
+I would use this when locating core Linux commands.
 
+------------------------------------------------------------------------
 
-## /root: 
+### /usr/bin
 
-The home directory for the root user (system administrator).
+Purpose: Contains most user command binaries.
 
-What it contains: Home directory of the root (admin) user.
+Command: ls -l /usr/bin
 
-I would use this when… I am logged in as root and need access to admin-only configuration or scripts.
+Observed: - python - vim
 
-ls -l /root
+I would use this when checking installed programs.
 
+------------------------------------------------------------------------
 
-## 5. /var/log
+### /opt
 
-Purpose
+Purpose: Used for installing optional or third‑party software.
 
-Contains system and application log files. Very important for troubleshooting.
+Command: ls -l /opt
 
-/var: Variable data files, including system logs, mail, and print queues.
+Observed: - application folders
 
-/var/log
+I would use this when managing third‑party applications.
 
-ls -l /var/log
+------------------------------------------------------------------------
 
-When I would use this
+## Home Directory Check
 
-I would use this directory when debugging application failures or investigating system issues.
+Command: ls -la \~
 
-<img width="918" height="165" alt="image" src="https://github.com/user-attachments/assets/990da4da-d912-4021-a126-e822ddc2ab42" />
+Observed: - .bashrc - .profile - .ssh
 
-
-What it contains: Log files generated by the system and services.
-
-I would use this when… An application or service is failing and I need error details or history (very common in DevOps).
-
-ls -l /var/log
-
-
-
-## /usr: 
-
-User programs, libraries, and documentation.
-
-## /dev: 
-
-Device files representing hardware devices (e.g., /dev/sda).
-
-## /boot: 
-
-Files required for the boot process, including the kernel.
-
-## /lib & /lib64: 
-
-Essential shared libraries for binaries in /bin and /sbin.
-
-## /tmp: Temporary files, often cleared upon reboot.
-
-What it contains: Temporary files created by applications and users. Files may be deleted on reboot.
-
-I would use this when… I need short-lived storage for testing, scripts, or intermediate files.
-
-ls -l /tmp
-
-
-## /opt: 
-
-Optional or third-party software packages.
-
-What it contains: Optional or third-party software installed manually.
-
-I would use this when… I install or manage custom applications outside the system package manager.
-
-ls -l /opt
-
-## /mnt & /media: 
-
-Mount points for temporary or removable storage devices. 
-
-This structure ensures consistency across different Linux distributions. 
-
-Hands-on task:
-
-<img width="877" height="730" alt="image" src="https://github.com/user-attachments/assets/8505f682-65e5-4898-b648-39475af3b231" />
-
-
+------------------------------------------------------------------------
 
 # Part 2: Scenario-Based Practice
 
-## 1: Troubleshooting a Full Disk
+## Scenario 1: Service Not Starting
 
-Problem: 
+Step 1: Command: systemctl status myapp\
 
-The server is slow, and applications are failing to start. You suspect the disk is full. 
+Why: Check if the service is running, failed, or stopped.
 
-Check disk usage: 
+Step 2: Command: journalctl -u myapp -n 50\
 
-Run df -h to find which partition is 100% full.
+Why: View the last 50 log lines to identify errors.
 
-Investigate logs: 
+Step 3: Command: systemctl is-enabled myapp\
 
-If /var is full, check logs.
+Why: Check if the service starts automatically on boot.
 
-Command: cd /var/log
+Step 4: Command: systemctl restart myapp\
 
-Command: du -sh * (To find the largest log file).
+Why: Restart the service after fixing the issue.
 
-Clear space: Safely truncate a log file instead of deleting it.
+------------------------------------------------------------------------
 
-Command: truncate -s 0 /var/log/syslog (Reduces file to 0 bytes without deleting). 
+## Scenario 2: High CPU Usage
 
+Step 1: Command: top\
 
-## Scenario 2: 
+Why: Shows real‑time CPU usage of processes.
 
-Configuring a New User
+Step 2: Command: htop\
 
-Problem: A new user named jdoe needs to be added to the system.
+Why: Interactive process monitoring tool.
 
-Create user: Use the system command in /usr/sbin.
+Step 3: Command: ps aux --sort=-%cpu \| head -10\
 
-Command: sudo useradd -m jdoe
+Why: Lists top processes consuming CPU.
 
-Verify home directory: Check that the user has a directory in /home.
+Step 4: Command: kill `<PID>`{=html}\
 
-Command: ls /home/jdoe
+Why: Stop the process using excessive CPU.
 
-Set password: Use passwd to secure the new account. 
+------------------------------------------------------------------------
 
+## Scenario 3: Finding Service Logs
 
+Step 1: Command: systemctl status docker\
 
+Why: Check service status and recent logs.
 
+Step 2: Command: journalctl -u docker -n 50\
 
-## Scenario 3: Changing System Network Settings
+Why: View the last 50 log lines.
 
-Problem: You need to change the IP address for the server. 
+Step 3: Command: journalctl -u docker -f\
 
-Locate config: In modern Linux, network configuration is in /etc/netplan or /etc/network/interfaces.
+Why: Follow logs in real time.
 
-Edit file: Use a text editor like vi or nano to edit the network config file inside /etc.
+------------------------------------------------------------------------
 
-Command: sudo nano /etc/netplan/01-netcfg.yaml
+## Scenario 4: File Permission Issue
 
-Apply changes: Apply settings with sudo netplan apply. 
+Step 1: Command: ls -l /home/user/backup.sh\
 
+Why: Check current file permissions.
 
+Step 2: Command: chmod +x /home/user/backup.sh\
 
+Why: Add execute permission.
 
+Step 3: Command: ls -l /home/user/backup.sh\
 
-## Scenario 4: Mounting a New USB Drive 
+Why: Verify execute permission is added.
 
-Problem: A USB drive is plugged in, but you cannot access the files. 
+Step 4: Command: ./backup.sh\
 
-Identify device: Locate the device name in /dev.
+Why: Execute the script.
 
-Command: lsblk (e.g., /dev/sdb1).
+------------------------------------------------------------------------
 
-Create Mount Point: Create a directory in /mnt or /media.
+## Key Learnings
 
-Command: sudo mkdir /mnt/usb
+-   Linux file system hierarchy helps locate logs, configs, and binaries
 
-Mount: Mount the device to the directory.
+    quickly.
 
-Command: sudo mount /dev/sdb1 /mnt/usb 
+-   Troubleshooting usually involves checking service status, logs, CPU
 
-
-
-
-
-## Scenario 5: Installing Third-Party Software
-
-Problem: You downloaded a pre-compiled software package (not via a repository) and need to install it securely. 
-
-Move to Location: Place the application in /opt.
-
-Command: sudo mv software_folder /opt/
-
-Add to Path: Add /opt/software_folder/bin to your $PATH to run the command from anywhere. 
-
-
-
-
-
-## Scenario 6: Reviewing Kernel Errors
-
-Problem: A hardware device is not working, and you need to check kernel messages. 
-
-Access Kernel Info: Go to the virtual filesystem /proc.
-
-Command: cat /proc/cpuinfo (View CPU info) or dmesg (Check boot/hardware logs).
-
-Alternative: View log messages.
-
-Command: cat /var/log/dmesg
+    usage, and permissions.
+    
+-   These skills are important for DevOps production debugging.

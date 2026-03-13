@@ -30,6 +30,44 @@
 
 <img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/7d6f5631-1b33-4550-be0e-c438e482eb1d" />
 
+# Commands Used
+
+ssh  
+chmod  
+apt update  
+apt install docker.io  
+apt install nginx  
+systemctl  
+tail  
+scp  
+
+---
+
+# Challenges Faced
+
+Initially port 80 was not accessible because HTTP was not enabled in the security group.
+
+After enabling port 80, the Nginx webpage became accessible from the browser.
+
+---
+
+# What I Learned
+
+• How to launch a cloud instance  
+• How to connect to a server using SSH  
+• Installing Docker and Nginx on a Linux server  
+• Checking service status using systemctl  
+• Accessing and exporting server logs
+
+---
+
+# Why This Matters for DevOps
+
+These skills are essential for real production environments.
+
+DevOps engineers frequently deploy applications on cloud servers, manage services remotely via SSH, configure firewalls/security groups, and monitor logs for debugging.
+Files
+
 
 <img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/814759b8-bbd2-4851-b5ad-778405d784bb" />
 

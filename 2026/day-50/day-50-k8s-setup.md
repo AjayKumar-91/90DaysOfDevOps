@@ -15,14 +15,20 @@ Verification: Check official docs; these are correct.
 Text-based architecture diagram:
 
 Control Plane (Master Node):
+
   ├─ API Server          # Front door, handles kubectl requests
+  
   ├─ etcd                # Key-value store for cluster state
+  
   ├─ Scheduler           # Assigns pods to worker nodes
+  
   └─ Controller Manager  # Ensures desired state matches reality
 
 Worker Node:
   ├─ kubelet             # Agent managing pods, talks to API server
+  
   ├─ kube-proxy          # Manages networking rules for pod communication
+  
   └─ Container Runtime   # Runs containers (containerd, CRI-O)
 
 Request flow (kubectl apply -f pod.yaml):

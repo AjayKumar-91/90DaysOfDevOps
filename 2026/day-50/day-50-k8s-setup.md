@@ -16,20 +16,20 @@ Text-based architecture diagram:
 
 Control Plane (Master Node):
 
-  ├─ API Server          # Front door, handles kubectl requests
+  API Server          -> Front door, handles kubectl requests
   
-  ├─ etcd                # Key-value store for cluster state
+  etcd                -> Key-value store for cluster state
   
-  ├─ Scheduler           # Assigns pods to worker nodes
+  Scheduler           -> Assigns pods to worker nodes
   
-  └─ Controller Manager  # Ensures desired state matches reality
+  Controller Manager  -> Ensures desired state matches reality
 
 Worker Node:
-  ├─ kubelet             # Agent managing pods, talks to API server
+  kubelet             -> Agent managing pods, talks to API server
   
-  ├─ kube-proxy          # Manages networking rules for pod communication
+  kube-proxy          -> Manages networking rules for pod communication
   
-  └─ Container Runtime   # Runs containers (containerd, CRI-O)
+  Container Runtime   -> Runs containers (containerd, CRI-O)
 
 Request flow (kubectl apply -f pod.yaml):
 
@@ -173,13 +173,4 @@ Kubernetes was created by Google to manage containerized applications at scale. 
 - **Tool:** kind (Kubernetes in Docker)  
 - **Reason:** Lightweight, runs entirely in Docker, easy to recreate clusters quickly.
 
----
-
-## Cluster Verification
-
-### Nodes
-![kubectl get nodes screenshot](kubectl-nodes.png)
-
-### Kube-system Pods
-![kubectl get pods -n kube-system screenshot](kube-system-pods.png)
   

@@ -12,6 +12,9 @@ Verification: Check official docs; these are correct.
 
 # Task 2: Kubernetes Architecture
 
+<img width="1598" height="886" alt="image" src="https://github.com/user-attachments/assets/fa8fab12-0b75-4248-890b-088104258aae" />
+
+
 Text-based architecture diagram:
 
 Control Plane (Master Node):

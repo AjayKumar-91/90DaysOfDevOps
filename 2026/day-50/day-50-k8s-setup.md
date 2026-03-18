@@ -2,7 +2,7 @@
 
 ## Recall the Kubernetes Story
 
-### 1. Why was Kubernetes created? What problem does it solve?
+### 1. Why was Kubernetes created? What problem does it solve that Docker alone cannot?
 
 Kubernetes was created to manage containerized applications at scale.
 

@@ -1,24 +1,49 @@
-# Task 1: Recall the Kubernetes Story
+# Day 1 – Kubernetes Basics (Task 1)
 
-## Write from memory first:
+## Recall the Kubernetes Story
 
-### Why Kubernetes was created: 
+### 1. Why was Kubernetes created? What problem does it solve?
 
-Docker solves containerization, but managing hundreds of containers across multiple servers is hard. Kubernetes automates deployment, scaling, and management of 
+Kubernetes was created to manage containerized applications at scale.
 
-containerized applications.
+While Docker allows us to create and run containers, it does not handle:
+- Running containers across multiple machines
+- Automatic healing (restarting failed containers)
+- Load balancing between containers
+- Auto-scaling based on traffic
+- Rolling updates and zero-downtime deployments
 
-### Who created it and inspiration:
+Kubernetes solves this by providing **container orchestration**, which automates deployment, scaling, networking, and management of containers across a cluster.
 
-Google created Kubernetes, inspired by their internal system called Borg.
+---
 
-### Meaning of the name "Kubernetes": 
+### 2. Who created Kubernetes and what was it inspired by?
 
-Greek for “helmsman” or “pilot,” symbolizing steering and managing containers.
+Kubernetes was created by Google.
 
-### Verification: 
+It was inspired by Google’s internal system called **Borg**, which was used to manage large-scale production workloads for many years.
 
-Check official docs; these are correct.
+---
+
+### 3. What does the name "Kubernetes" mean?
+
+The word "Kubernetes" comes from Greek and means:
+
+**"Helmsman" or "Ship Pilot"**
+
+It represents someone who steers a ship, which aligns with Kubernetes’ role in managing and directing containerized applications.
+
+---
+
+## Summary
+
+- **Problem:** Docker cannot manage containers at scale  
+- **Solution:** Kubernetes provides container orchestration  
+- **Created by:** Google  
+- **Inspired by:** Borg  
+- **Meaning:** Helmsman (Ship Pilot)
+
+---
 
 
 # Task 2: Kubernetes Architecture

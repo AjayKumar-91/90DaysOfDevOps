@@ -105,13 +105,13 @@ You should see the Nginx welcome page from outside the cluster.
 
 In a cloud environment (AWS, GCP, Azure), a LoadBalancer Service provisions a real external load balancer that routes traffic to your nodes.
 
-Create loadbalancer-service.yaml:
+### Create loadbalancer-service.yaml:
 
 kubectl apply -f loadbalancer-service.yaml
 
 kubectl get services
 
-Minikube simulation:
+### Minikube simulation:
 
 minikube tunnel
 
@@ -121,4 +121,57 @@ kubectl get services
 
 
 Verify: The LoadBalancer service automatically creates a ClusterIP and a NodePort.
+
+
+# Task 6: Understand the Service Types Side by Side
+
+| Type         | Accessible From                   | Use Case                                |
+| ------------ | --------------------------------- | --------------------------------------- |
+| ClusterIP    | Inside cluster only               | Internal communication between services |
+| NodePort     | Outside via `<NodeIP>:<NodePort>` | Development, testing                    |
+| LoadBalancer | Outside via cloud load balancer   | Production traffic in cloud             |
+
+
+### Check all three services:
+
+kubectl get services -o wide
+
+kubectl describe service web-app-loadbalancer
+
+Hierarchy: LoadBalancer → NodePort → ClusterIP
+
+<img width="1887" height="652" alt="image" src="https://github.com/user-attachments/assets/f0be69a8-8b59-4274-8cf5-801b35ccd195" />
+
+
+# Task 7: Clean Up
+
+kubectl delete -f app-deployment.yaml
+
+kubectl delete -f clusterip-service.yaml
+
+kubectl delete -f nodeport-service.yaml
+
+kubectl delete -f loadbalancer-service.yaml
+
+kubectl get pods
+
+kubectl get services
+
+Only the default Kubernetes service should remain.
+
+
+<img width="1916" height="390" alt="image" src="https://github.com/user-attachments/assets/e953580d-3476-4afb-9944-5e9a25d227f7" />
+
+
+
+# Notes
+
+kubectl get endpoints <service-name> shows which Pod IPs a Service routes to.
+
+port is the Service port; targetPort is the Pod container port.
+
+NodePort range: 30000–32767. If unspecified, Kubernetes chooses automatically.
+
+Always match Service selector labels with Pod labels.
+
 

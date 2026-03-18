@@ -31,26 +31,33 @@ kubectl apply -f nginx-pod.yaml
 Verify:
 
 kubectl get pods
+
 kubectl get pods -o wide
+
 Wait until the STATUS shows Running. Then explore:
 
 # Detailed info about the pod
+
 kubectl describe pod nginx-pod
 
 <img width="1870" height="855" alt="image" src="https://github.com/user-attachments/assets/ee66394e-a227-468f-9da2-ae2ebe3b5735" />
 
 
 # Read the logs
+
 kubectl logs nginx-pod
 
 <img width="1347" height="647" alt="image" src="https://github.com/user-attachments/assets/2acfc240-13df-4929-bb13-ec18d651982f" />
 
 
 # Get a shell inside the container
+
 kubectl exec -it nginx-pod -- /bin/bash
 
 # Inside the container, run:
+
 curl localhost:80
+
 exit
 
 
@@ -63,8 +70,11 @@ exit
 Apply and verify:
 
 kubectl apply -f busybox-pod.yaml
+
 kubectl get pods
+
 kubectl logs busybox-pod
+
 
 <img width="1257" height="196" alt="image" src="https://github.com/user-attachments/assets/c1fe2d91-79a2-4f9e-8bfc-a8762c39e32e" />
 
@@ -73,9 +83,11 @@ kubectl logs busybox-pod
 ## You have been using the declarative approach (writing YAML, then kubectl apply). Kubernetes also supports imperative commands:
 
 ### Create a pod without a YAML file
+
 kubectl run redis-pod --image=redis:latest
 
 ### Check it
+
 kubectl get pods
 
 ### Now extract the YAML that Kubernetes generated:
@@ -93,6 +105,7 @@ You can also use dry-run to generate YAML without creating anything:
 
 
 # Task 4: Validate Before Applying
+
 Before applying a manifest, you can validate it:
 
 <img width="1291" height="95" alt="image" src="https://github.com/user-attachments/assets/db183d7f-61ea-44b0-9d34-21c8434d4433" />

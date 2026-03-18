@@ -160,14 +160,15 @@ kubectl get pods -n kube-system
 <img width="1886" height="257" alt="image" src="https://github.com/user-attachments/assets/8e198c1f-e65a-436a-8ab3-b776d1646fe3" />
 
 
-| Pod Name                | Component          |
-| ----------------------- | ------------------ |
-| kube-apiserver          | API Server         |
-| etcd                    | etcd DB            |
-| kube-scheduler          | Scheduler          |
-| kube-controller-manager | Controller Manager |
-| coredns                 | Cluster DNS        |
-| kube-proxy              | kube-proxy         |
+| Pod Name                | Architecture Component     | Purpose                          |
+| ----------------------- | -------------------------- | -------------------------------- |
+| kube-apiserver          | API Server                 | Handles all cluster API requests |
+| etcd                    | etcd DB                    | Stores cluster state             |
+| kube-scheduler          | Scheduler                  | Assigns pods to nodes            |
+| kube-controller-manager | Controller Manager         | Maintains desired state          |
+| kube-proxy              | kube-proxy                 | Handles networking between pods  |
+| coredns                 | DNS (supporting component) | Service discovery inside cluster |
+
 
 # Task 6: Practice Cluster Lifecycle
 

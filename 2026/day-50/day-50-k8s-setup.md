@@ -1,14 +1,25 @@
 # Task 1: Recall the Kubernetes Story
 
-Write from memory first:
+## Write from memory first:
 
-Why Kubernetes was created: Docker solves containerization, but managing hundreds of containers across multiple servers is hard. Kubernetes automates deployment, scaling, and management of containerized applications.
+### Why Kubernetes was created: 
 
-Who created it and inspiration: Google created Kubernetes, inspired by their internal system called Borg.
+Docker solves containerization, but managing hundreds of containers across multiple servers is hard. Kubernetes automates deployment, scaling, and management of 
 
-Meaning of the name "Kubernetes": Greek for “helmsman” or “pilot,” symbolizing steering and managing containers.
+containerized applications.
 
-Verification: Check official docs; these are correct.
+### Who created it and inspiration:
+
+Google created Kubernetes, inspired by their internal system called Borg.
+
+### Meaning of the name "Kubernetes": 
+
+Greek for “helmsman” or “pilot,” symbolizing steering and managing containers.
+
+### Verification: 
+
+Check official docs; these are correct.
+
 
 # Task 2: Kubernetes Architecture
 

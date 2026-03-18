@@ -12,7 +12,7 @@ Verification: Check official docs; these are correct.
 
 # Task 2: Kubernetes Architecture
 
-<img width="1598" height="886" alt="image" src="https://github.com/user-attachments/assets/fa8fab12-0b75-4248-890b-088104258aae" />
+<img width="1706" height="909" alt="image" src="https://github.com/user-attachments/assets/74cccadf-161b-4aac-a992-db9af8844f91" />
 
 
 Text-based architecture diagram:

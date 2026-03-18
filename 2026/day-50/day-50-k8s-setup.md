@@ -103,6 +103,8 @@ sudo mv kubectl /usr/local/bin/
 
 kubectl version --client
 
+<img width="1058" height="135" alt="image" src="https://github.com/user-attachments/assets/d305cb02-2e07-428c-ac48-945a97637b31" />
+
 
 # Task 4: Set Up Local Cluster
 
@@ -128,19 +130,35 @@ kubectl cluster-info
 
 kubectl get nodes
 
+
+<img width="1376" height="222" alt="image" src="https://github.com/user-attachments/assets/9261bf2f-dc21-4378-9a4a-fafd7a51d3af" />
+
+
 # Task 5: Explore Cluster
 
+### See cluster info
 kubectl cluster-info
 
+###  List all nodes
 kubectl get nodes
 
+###  Get detailed info about your node
 kubectl describe node <node-name>
 
+###  List all namespaces
 kubectl get namespaces
 
+###  See ALL pods running in the cluster (across all namespaces)
 kubectl get pods -A
 
+<img width="1572" height="915" alt="image" src="https://github.com/user-attachments/assets/ffa7d551-f057-4541-842b-a94d7d5b5d50" />
+
+
+### Look at the pods running in the kube-system namespace:
 kubectl get pods -n kube-system
+
+<img width="1886" height="257" alt="image" src="https://github.com/user-attachments/assets/8e198c1f-e65a-436a-8ab3-b776d1646fe3" />
+
 
 | Pod Name                | Component          |
 | ----------------------- | ------------------ |
@@ -172,6 +190,8 @@ kubectl config current-context
 kubectl config get-contexts
 
 kubectl config view
+
+<img width="1918" height="967" alt="image" src="https://github.com/user-attachments/assets/fda72ffd-2f14-459f-937f-2d1ed061f68b" />
 
 
 # Notes:

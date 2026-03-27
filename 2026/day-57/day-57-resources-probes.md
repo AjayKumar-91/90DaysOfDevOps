@@ -6,8 +6,22 @@
 CPU is in millicores: `100m` = 0.1 CPU. Memory is in mebibytes: `128Mi`.
 
 **Requests** = guaranteed minimum (scheduler uses this for placement). **Limits** = maximum allowed (kubelet enforces at runtime).
+| Concept      | Meaning                                          |
+| ------------ | ------------------------------------------------ |
+| **Requests** | Minimum guaranteed resources (used by scheduler) |
+| **Limits**   | Maximum allowed resources (enforced at runtime)  |
+
 
 **Verify:** What QoS class does your Pod have?
+
+| QoS Class  | Condition          |
+| ---------- | ------------------ |
+| Guaranteed | requests == limits |
+| Burstable  | requests < limits  |
+| BestEffort | no requests/limits |
+
+<img width="1918" height="926" alt="image" src="https://github.com/user-attachments/assets/9142a43e-7e59-4700-9d3a-eb392d6f5faf" />
+
 
 ---
 
@@ -18,9 +32,18 @@ CPU is in millicores: `100m` = 0.1 CPU. Memory is in mebibytes: `128Mi`.
 
 CPU is throttled when over limit. Memory is killed — no mercy.
 
+| Resource | Behavior           |
+| -------- | ------------------ |
+| CPU      | Throttled          |
+| Memory   | Killed (OOMKilled) |
+
+
 Check `kubectl describe pod` for `Reason: OOMKilled` and `Exit Code: 137` (128 + SIGKILL).
 
 **Verify:** What exit code does an OOMKilled container have?
+
+<img width="1918" height="943" alt="image" src="https://github.com/user-attachments/assets/02a43942-ed44-455a-94b5-ca54bad93140" />
+
 
 ---
 
@@ -30,6 +53,9 @@ Check `kubectl describe pod` for `Reason: OOMKilled` and `Exit Code: 137` (128 +
 3. Run `kubectl describe pod` and read the Events — the scheduler says exactly why: insufficient resources
 
 **Verify:** What event message does the scheduler produce?
+
+<img width="1918" height="967" alt="image" src="https://github.com/user-attachments/assets/a7c21919-dfc3-4005-ab64-bfab981bc647" />
+
 
 ---
 
@@ -41,6 +67,9 @@ A liveness probe detects stuck containers. If it fails, Kubernetes restarts the 
 3. After the file is deleted, 3 consecutive failures trigger a restart. Watch with `kubectl get pod -w`
 
 **Verify:** How many times has the container restarted?
+
+<img width="1918" height="487" alt="image" src="https://github.com/user-attachments/assets/0ae89621-5cef-4dc7-a114-a3bb944e36ad" />
+
 
 ---
 
@@ -55,6 +84,9 @@ A readiness probe controls traffic. Failure removes the Pod from Service endpoin
 
 **Verify:** When readiness failed, was the container restarted?
 
+<img width="1918" height="393" alt="image" src="https://github.com/user-attachments/assets/92c7b29a-228e-4956-ba54-ec7f4aa5669b" />
+
+
 ---
 
 ### Task 6: Startup Probe
@@ -66,7 +98,13 @@ A startup probe gives slow-starting containers extra time. While it runs, livene
 
 **Verify:** What would happen if `failureThreshold` were 2 instead of 12?
 
+<img width="1918" height="572" alt="image" src="https://github.com/user-attachments/assets/a8e96bab-a3e7-4d19-a934-42ba5990d78e" />
+
+
 ---
 
 ### Task 7: Clean Up
 Delete all pods and services you created.
+
+kubectl delete pod resource-demo oom-demo pending-demo liveness-demo readiness-demo startup-demo
+kubectl delete svc readiness-svc

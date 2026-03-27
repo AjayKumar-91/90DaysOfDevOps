@@ -16,6 +16,14 @@ Delete the Deployment before moving on.
 
 **Verify:** Why would random pod names be a problem for a database cluster?
 
+Pod names are random, e.g., nginx-deploy-5f6d8f7c9b-abcde
+
+Deleting a pod creates a new pod with a different random name.
+
+Databases need stable identities for replication and clustering.
+
+Random pod names break configurations, DNS resolution, and persistent storage mapping.
+
 <img width="1918" height="778" alt="image" src="https://github.com/user-attachments/assets/7203cb1b-b1ff-4f16-b2b2-35b25880f9c1" />
 
 
@@ -29,6 +37,9 @@ Delete the Deployment before moving on.
 A Headless Service creates individual DNS entries for each pod instead of load-balancing to one IP. StatefulSets require this.
 
 **Verify:** What does the CLUSTER-IP column show?
+
+CLUSTER-IP should be None.
+Each pod will get its own DNS entry: <pod-name>.web.default.svc.cluster.local.
 
 <img width="1918" height="450" alt="image" src="https://github.com/user-attachments/assets/981c9241-cbaf-4caa-9e15-f0d200868b46" />
 
@@ -47,6 +58,9 @@ Check the PVCs: `kubectl get pvc` — you should see `web-data-web-0`, `web-data
 
 **Verify:** What are the exact pod names and PVC names?
 
+Pods are created in order: web-0, web-1, web-2.
+PVCs are automatically created: web-data-web-0, web-data-web-1, web-data-web-2.
+
 <img width="1917" height="786" alt="image" src="https://github.com/user-attachments/assets/2ecf6eb8-942e-48b5-8f40-400b239e5baf" />
 
 <img width="1918" height="197" alt="image" src="https://github.com/user-attachments/assets/b49ef27f-5432-4036-9a28-83352d3a5efe" />
@@ -62,6 +76,8 @@ Each StatefulSet pod gets a DNS name: `<pod-name>.<service-name>.<namespace>.svc
 
 **Verify:** Does the nslookup IP match the pod IP?
 
+The resolved IPs match kubectl get pods -o wide.
+
 <img width="1918" height="760" alt="image" src="https://github.com/user-attachments/assets/f16d2ffc-3ed5-4507-87c6-c19819a39fd8" />
 
 
@@ -76,6 +92,10 @@ The new pod reconnected to the same PVC.
 
 **Verify:** Is the data identical after pod recreation?
 
+Verify: The data is identical — the pod reconnected to its original PVC.
+Verify: The data is identical — the pod reconnected to its original PVC.
+
+
 <img width="1918" height="368" alt="image" src="https://github.com/user-attachments/assets/694c3543-a4d2-4c22-a086-dae78d5a634b" />
 
 
@@ -87,7 +107,11 @@ The new pod reconnected to the same PVC.
 3. Check `kubectl get pvc` — all five PVCs still exist. Kubernetes keeps them on scale-down so data is preserved if you scale back up.
 
 **Verify:** After scaling down, how many PVCs exist?
+Pods are created in order: web-3, then web-4.
 
+PVCs still exist: web-data-web-0 through web-data-web-4.
+
+Kubernetes keeps PVCs after scale-down for data preservation.
 <img width="1918" height="877" alt="image" src="https://github.com/user-attachments/assets/f0bae637-7b8a-45a9-b607-c3d7e303f8a3" />
 
 
@@ -99,6 +123,9 @@ The new pod reconnected to the same PVC.
 3. Delete PVCs manually
 
 **Verify:** Were PVCs auto-deleted with the StatefulSet?
+
+Verify: PVCs are not auto-deleted when StatefulSet is deleted — must delete manually.
+
 
 <img width="1735" height="303" alt="image" src="https://github.com/user-attachments/assets/3847fe56-2e83-44c5-b771-06ffd29b82b9" />
 

@@ -40,6 +40,7 @@ Verify: Does the /health endpoint respond?
 
 <img width="1918" height="972" alt="image" src="https://github.com/user-attachments/assets/89f08d45-1554-4d96-a343-de3c7d82acad" />
 
+<img width="1918" height="682" alt="image" src="https://github.com/user-attachments/assets/80d512b0-efd3-4910-b5db-be7d207eb33c" />
 
 
 

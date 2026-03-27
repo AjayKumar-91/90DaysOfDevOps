@@ -122,3 +122,20 @@ kubectl get secret
 
 <img width="1918" height="633" alt="image" src="https://github.com/user-attachments/assets/b839a97a-3ae1-4dfc-b08d-4b0619382307" />
 
+
+## ConfigMaps and Secrets
+
+- **ConfigMaps:** Store non-sensitive configuration (key-value pairs or files).  
+- **Secrets:** Store sensitive data like passwords and API keys. Encoded in base64, can be optionally encrypted at rest.
+
+## Environment Variables vs Volume Mounts
+
+- **Env Variables:** Easy key-value injection, **static at pod start**.  
+- **Volume Mounts:** Full files, automatically updated if ConfigMap or Secret changes.
+
+## Base64 Encoding
+
+- Secrets are **base64-encoded**, not encrypted.  
+- Anyone with cluster access can decode:  
+  ```bash
+  echo '<base64-value>' | base64 --decode

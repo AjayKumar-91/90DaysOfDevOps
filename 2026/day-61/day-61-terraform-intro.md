@@ -8,6 +8,26 @@ Before touching the terminal, research and write short notes on:
 
 Write this in your own words -- not copy-pasted definitions.
 
+otes (write in your own words):
+
+What is IaC?
+Infrastructure as Code (IaC) is the practice of defining cloud resources (servers, databases, networks, etc.) using code instead of manually creating them through a GUI.
+Why IaC matters in DevOps:
+It allows reproducibility, automation, version control, and collaboration. Teams can provision infrastructure consistently across environments (dev, staging, prod).
+Problems IaC solves:
+Manual configuration errors
+Inconsistencies across environments
+Difficult tracking of infrastructure changes
+Slow provisioning and scaling
+Terraform vs CloudFormation, Ansible, Pulumi:
+Terraform – declarative, cloud-agnostic, manages infrastructure lifecycle.
+CloudFormation – declarative, AWS-specific.
+Ansible – imperative, mainly for configuration management.
+Pulumi – imperative/declarative hybrid, uses general-purpose programming languages.
+Declarative & Cloud-agnostic meaning:
+Declarative – You describe what you want; Terraform figures out how to achieve it.
+Cloud-agnostic – Works across AWS, Azure, GCP, and others, using the same workflow.
+
 ---
 
 ### Task 2: Install Terraform and Configure AWS

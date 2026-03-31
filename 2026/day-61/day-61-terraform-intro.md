@@ -172,6 +172,14 @@ Don’t commit .tfstate to Git (contains sensitive info).
 1. Change the EC2 instance tag from `"TerraWeek-Day1"` to `"TerraWeek-Modified"` in your `main.tf`
 2. Run `terraform plan` and read the output carefully:
    - What do the `~`, `+`, and `-` symbols mean?
+   - ### ~ = modify, + = add, - = remove
+ 
+Terraform performs an in-place update for tag changes.
+
+
+<img width="1918" height="826" alt="image" src="https://github.com/user-attachments/assets/3157fdc3-94aa-4d3c-be47-93b1efa54620" />
+
+Destroy everything:
    - Is this an in-place update or a destroy-and-recreate?
 3. Apply the change
 4. Verify the tag changed in the AWS console
@@ -179,8 +187,17 @@ Don’t commit .tfstate to Git (contains sensitive info).
 ```bash
 terraform destroy
 ```
-6. Verify in the AWS console -- both the S3 bucket and EC2 instance should be gone
+<img width="1918" height="472" alt="image" src="https://github.com/user-attachments/assets/3f62c04b-a8c6-4884-b3a8-1c31e41de8f4" />
 
+<img width="1918" height="781" alt="image" src="https://github.com/user-attachments/assets/317f2740-e04e-40b3-b47f-9057575ddbb0" />
+
+
+
+6. Verify in the AWS console -- both the S3 bucket and EC2 instance should be gone
+     ~ = in-place modification
+     + = new resource
+     - = resource to destroy
+     - terraform destroy -auto-approve
 ---
 
 ## Hints

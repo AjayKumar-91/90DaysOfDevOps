@@ -1,0 +1,29 @@
+digraph G {
+  rankdir = "RL";
+  node [shape = rect, fontname = "sans-serif"];
+  "aws_instance.my_instance" [label="aws_instance.my_instance"];
+  "aws_internet_gateway.igw" [label="aws_internet_gateway.igw"];
+  "aws_key_pair.terra_key" [label="aws_key_pair.terra_key"];
+  "aws_route_table.rt" [label="aws_route_table.rt"];
+  "aws_route_table_association.rta" [label="aws_route_table_association.rta"];
+  "aws_s3_bucket.logs" [label="aws_s3_bucket.logs"];
+  "aws_security_group.my_security_group" [label="aws_security_group.my_security_group"];
+  "aws_subnet.sub_public" [label="aws_subnet.sub_public"];
+  "aws_vpc.my_vpc" [label="aws_vpc.my_vpc"];
+  "aws_vpc_security_group_egress_rule.allow_all_traffic" [label="aws_vpc_security_group_egress_rule.allow_all_traffic"];
+  "aws_vpc_security_group_ingress_rule.allow_http" [label="aws_vpc_security_group_ingress_rule.allow_http"];
+  "aws_vpc_security_group_ingress_rule.allow_ssh" [label="aws_vpc_security_group_ingress_rule.allow_ssh"];
+  "aws_instance.my_instance" -> "aws_key_pair.terra_key";
+  "aws_instance.my_instance" -> "aws_security_group.my_security_group";
+  "aws_instance.my_instance" -> "aws_subnet.sub_public";
+  "aws_internet_gateway.igw" -> "aws_vpc.my_vpc";
+  "aws_route_table.rt" -> "aws_internet_gateway.igw";
+  "aws_route_table_association.rta" -> "aws_route_table.rt";
+  "aws_route_table_association.rta" -> "aws_subnet.sub_public";
+  "aws_s3_bucket.logs" -> "aws_instance.my_instance";
+  "aws_security_group.my_security_group" -> "aws_vpc.my_vpc";
+  "aws_subnet.sub_public" -> "aws_vpc.my_vpc";
+  "aws_vpc_security_group_egress_rule.allow_all_traffic" -> "aws_security_group.my_security_group";
+  "aws_vpc_security_group_ingress_rule.allow_http" -> "aws_security_group.my_security_group";
+  "aws_vpc_security_group_ingress_rule.allow_ssh" -> "aws_security_group.my_security_group";
+}

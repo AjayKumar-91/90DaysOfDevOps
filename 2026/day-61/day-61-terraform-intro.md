@@ -112,6 +112,9 @@ Go to the AWS S3 console and verify your bucket exists.
 
 **Document:** What did `terraform init` download? What does the `.terraform/` directory contain?
 
+
+<img width="1918" height="687" alt="image" src="https://github.com/user-attachments/assets/f65c77fc-0434-44d8-b3fb-7f9d13879389" />
+
 ---
 
 ### Task 4: Add an EC2 Instance
@@ -119,6 +122,7 @@ In the same `main.tf`, add:
 1. A `resource "aws_instance"` using AMI `ami-0f5ee92e2d63afc18` (Amazon Linux 2 in ap-south-1 -- use the correct AMI for your region)
 2. Set instance type to `t2.micro`
 3. Add a tag: `Name = "TerraWeek-Day1"`
+   
 
 Run:
 ```bash
@@ -129,6 +133,8 @@ terraform apply
 Go to the AWS EC2 console and verify your instance is running with the correct name tag.
 
 **Document:** How does Terraform know the S3 bucket already exists and only the EC2 instance needs to be created?
+
+<img width="1918" height="830" alt="image" src="https://github.com/user-attachments/assets/4985e314-3200-4b84-b944-66ac67b281fd" />
 
 ---
 
@@ -143,11 +149,22 @@ terraform state list                    # List all resources Terraform manages
 terraform state show aws_s3_bucket.<name>   # Detailed view of a specific resource
 terraform state show aws_instance.<name>
 ```
+<img width="1918" height="952" alt="image" src="https://github.com/user-attachments/assets/7b51f890-ed8e-42f7-bef7-9bd8645b6b41" />
+
+<img width="1918" height="887" alt="image" src="https://github.com/user-attachments/assets/1d96d9b3-78fe-458f-b45d-323708b16dc5" />
+
+<img width="1918" height="930" alt="image" src="https://github.com/user-attachments/assets/d634d7f7-bf6c-4110-a3e2-c7a1d9c52a3c" />
 
 3. Answer these questions in your notes:
    - What information does the state file store about each resource?
    - Why should you never manually edit the state file?
    - Why should the state file not be committed to Git?
+
+Notes:
+
+State file stores resource IDs, configuration, dependencies, and metadata.
+Never manually edit it (can corrupt your state).
+Don’t commit .tfstate to Git (contains sensitive info).
 
 ---
 

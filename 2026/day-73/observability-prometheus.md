@@ -152,12 +152,18 @@ PromQL (Prometheus Query Language) is how you ask questions about your metrics. 
 ```promql
 up
 ```
+<img width="1918" height="540" alt="image" src="https://github.com/user-attachments/assets/617f5515-eec7-49b9-af79-9b0fb08ec989" />
+
+
 This returns 1 (up) or 0 (down) for each scrape target.
 
 2. **Range vector** -- values over a time window:
 ```promql
 prometheus_http_requests_total[5m]
 ```
+<img width="1915" height="762" alt="image" src="https://github.com/user-attachments/assets/c7fc5508-4ecd-4cec-9390-91e211c27ed3" />
+
+
 Returns all values from the last 5 minutes.
 
 3. **Rate** -- per-second rate of a counter over a time window:
@@ -170,23 +176,36 @@ This is the most common function you will use. Counters always go up -- `rate()`
 ```promql
 sum(rate(prometheus_http_requests_total[5m]))
 ```
+<img width="1918" height="912" alt="image" src="https://github.com/user-attachments/assets/e9db3c41-2911-40dc-bf8a-ce408e379838" />
+
+
 
 5. **Filter by label:**
 ```promql
 prometheus_http_requests_total{code="200"}
 prometheus_http_requests_total{code!="200"}
 ```
+<img width="1918" height="911" alt="image" src="https://github.com/user-attachments/assets/0adb0358-ddaf-45e7-8180-a9d86c407f94" />
+
+<img width="1912" height="540" alt="image" src="https://github.com/user-attachments/assets/6fcce47f-5e90-4845-a5af-98bf45315a70" />
+
 
 6. **Arithmetic:**
 ```promql
 process_resident_memory_bytes / 1024 / 1024
 ```
+<img width="1918" height="506" alt="image" src="https://github.com/user-attachments/assets/7e8ec387-fb91-4355-b347-c75f607d8494" />
+
+
 This converts bytes to megabytes.
 
 7. **Top-K:**
 ```promql
 topk(5, prometheus_http_requests_total)
 ```
+<img width="1918" height="692" alt="image" src="https://github.com/user-attachments/assets/525683f2-5181-40fa-bc26-dac4b11fabd4" />
+
+
 
 **Try this exercise:** Write a PromQL query that shows the per-second rate of non-200 HTTP requests to Prometheus over the last 5 minutes. (Hint: use `rate()` with a label filter on `code!="200"`)
 

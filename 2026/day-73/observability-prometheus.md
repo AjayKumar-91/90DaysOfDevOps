@@ -104,12 +104,20 @@ Open `http://localhost:9090` in your browser. You should see the Prometheus web 
 Explore the Prometheus UI and understand these concepts:
 
 1. **Scrape targets** -- endpoints that Prometheus pulls metrics from at regular intervals (pull-based model)
+
 2. **Metrics types:**
    - `Counter` -- only goes up (total requests served, total errors)
+     <img width="1918" height="961" alt="image" src="https://github.com/user-attachments/assets/e1a657b4-dd8c-4f71-a419-aa22c2877d1d" />
+
    - `Gauge` -- goes up and down (current CPU usage, memory in use, active connections)
+     <img width="1918" height="516" alt="image" src="https://github.com/user-attachments/assets/964f7749-203e-4321-8a92-412593459222" />
+
    - `Histogram` -- distribution of values in buckets (request duration: how many took <100ms, <500ms, <1s)
+     
    - `Summary` -- similar to histogram but calculates percentiles on the client side
 3. **Labels** -- key-value pairs that add dimensions to metrics (e.g., `http_requests_total{method="GET", status="200"}`)
+   <img width="1918" height="607" alt="image" src="https://github.com/user-attachments/assets/1c2ce118-9ffd-4c57-ae04-587698463dfa" />
+
 4. **Time series** -- a unique combination of metric name + labels
 
 Go to the Prometheus UI graph page (`http://localhost:9090/graph`) and run these queries:

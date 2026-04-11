@@ -272,6 +272,10 @@ curl http://localhost:8000
 
 **Note:** Not all applications expose Prometheus metrics natively. In later days you will learn how Node Exporter, cAdvisor, and OTEL Collector act as metric exporters for systems that do not have built-in Prometheus support.
 
+<img width="1918" height="737" alt="image" src="https://github.com/user-attachments/assets/e2d4210b-bd70-49d4-951e-ee459568d6f0" />
+
+<img width="1918" height="940" alt="image" src="https://github.com/user-attachments/assets/cfd3ad65-03b0-4a1f-bf58-de2a434a2fdb" />
+
 ---
 
 ### Task 6: Explore Data Retention and Storage
@@ -281,6 +285,8 @@ Understand how Prometheus stores data:
 ```bash
 docker exec prometheus du -sh /prometheus
 ```
+<img width="1918" height="77" alt="image" src="https://github.com/user-attachments/assets/8859d9d9-1ec2-40cc-a9c3-b50c2e465eb1" />
+
 
 2. Prometheus stores data in a local time-series database (TSDB). Default retention is 15 days. You can change it:
 ```yaml

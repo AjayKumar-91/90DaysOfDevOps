@@ -170,14 +170,16 @@ Returns all values from the last 5 minutes.
 ```promql
 rate(prometheus_http_requests_total[5m])
 ```
+<img width="1916" height="968" alt="image" src="https://github.com/user-attachments/assets/f1eb17b5-31ee-44ab-8ca5-668917c2aafd" />
+
+
 This is the most common function you will use. Counters always go up -- `rate()` converts them to a useful per-second speed.
 
 4. **Aggregation** -- sum across all label combinations:
 ```promql
 sum(rate(prometheus_http_requests_total[5m]))
 ```
-<img width="1918" height="912" alt="image" src="https://github.com/user-attachments/assets/e9db3c41-2911-40dc-bf8a-ce408e379838" />
-
+<img width="1918" height="587" alt="image" src="https://github.com/user-attachments/assets/5e03aa90-1802-48ce-819b-99a3b4d22d0b" />
 
 
 5. **Filter by label:**

@@ -118,26 +118,20 @@ Go to the Prometheus UI graph page (`http://localhost:9090/graph`) and run these
 # How many metrics is Prometheus collecting about itself?
 count({__name__=~".+"})
 
-<img width="1917" height="600" alt="image" src="https://github.com/user-attachments/assets/b7f48d50-a4c4-4eb2-9903-358dd48232c0" />
-
-
 # How much memory is Prometheus using?
 process_resident_memory_bytes
-<img width="1918" height="471" alt="image" src="https://github.com/user-attachments/assets/9cc2a233-5cce-469d-9b6a-1288873f2c70" />
-
-
 
 # Total HTTP requests to the Prometheus server
 prometheus_http_requests_total
-<img width="1918" height="957" alt="image" src="https://github.com/user-attachments/assets/17f8bfb5-5b3d-4d90-b71b-9ff1179608a2" />
-
 
 # Break it down by handler
 prometheus_http_requests_total{handler="/api/v1/query"}
-<img width="1918" height="615" alt="image" src="https://github.com/user-attachments/assets/0db18115-6cc2-4337-8379-963e317b8930" />
-
 
 ```
+<img width="1917" height="600" alt="image" src="https://github.com/user-attachments/assets/b7f48d50-a4c4-4eb2-9903-358dd48232c0" />
+<img width="1918" height="471" alt="image" src="https://github.com/user-attachments/assets/9cc2a233-5cce-469d-9b6a-1288873f2c70" />
+<img width="1918" height="957" alt="image" src="https://github.com/user-attachments/assets/17f8bfb5-5b3d-4d90-b71b-9ff1179608a2" />
+<img width="1918" height="615" alt="image" src="https://github.com/user-attachments/assets/0db18115-6cc2-4337-8379-963e317b8930" />
 
 **Document:** What is the difference between a counter and a gauge? Give one real-world example of each.
 

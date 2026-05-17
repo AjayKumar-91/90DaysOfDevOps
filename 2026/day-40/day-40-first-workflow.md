@@ -209,71 +209,92 @@ git push origin main
 ```
 
 ---
+# Task 5: Break Pipeline Intentionally
 
+Add failing step:
 
+```yaml
+- name: Fail Pipeline
+  run: exit 1
+```
 
-## Task 5: Break It On Purpose 
-
-Add a step that runs a command that will fail (e.g., exit 1 or a misspelled command)
-
-Push and observe what happens in the Actions tab
-
-Fix it and push again
-
-Write in your notes: What does a failed pipeline look like? How do you read the error?
-
-<img width="1600" height="857" alt="image" src="https://github.com/user-attachments/assets/e6e5502d-5c7d-4b4b-bf77-5f9fd85ea560" />
-
-<img width="1600" height="857" alt="image" src="https://github.com/user-attachments/assets/2dae17dc-213b-4255-95fd-8bf03519a18a" />
-
-## Workflow YAML
+Example:
 
 ```yaml
 name: Hello Workflow
 
-on: push
+on:
+  push:
 
 jobs:
   greet:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Print Hello
+      - name: Print Message
         run: echo "Hello from GitHub Actions!"
 
-      - name: Print Date and Time
-        run: date
+      - name: Fail Pipeline
+        run: exit 1
+```
 
-      - name: Print Branch Name
-        run: echo "Branch is ${{ github.ref_name }}"
-
-      - name: List Files
-        run: ls -la
-
-      - name: Print Runner OS
-        run: echo "Runner OS is $RUNNER_OS"
-
+Push changes and observe failed workflow in Actions tab.
 
 ---
 
-# What You Learned Today (Real DevOps Skill)
+# Understanding Failed Pipeline
 
-Today you used:
+Failed pipeline shows:
 
-✅ **CI pipeline**  
-✅ **GitHub Actions**  
-✅ **Cloud runner**  
-✅ **Workflow YAML**  
-✅ **Pipeline debugging**
+```bash
+Error: Process completed with exit code 1.
+```
 
-This is **core DevOps skill used in companies**.
+How to debug:
+
+1. Open Actions tab
+2. Click failed workflow
+3. Open failed job
+4. Expand failed step
+5. Read logs carefully
 
 ---
 
-If you want, I can also show you the **Day-41 task early** where we build a **Java CI pipeline (perfect for your Java background)**. It will look **very strong on your resume**.
+# Fix Pipeline
 
+Replace failing step:
 
-        
+```yaml
+- name: Success Step
+  run: echo "Pipeline fixed!"
+```
+
+Push again.
+
+---
+
+# What You Learned
+
+- GitHub Actions basics
+- Workflow structure
+- Jobs and steps
+- GitHub runners
+- CI/CD basics
+- Debugging failed workflows
+- GitHub variables
+- YAML workflow syntax
+
+---
+
+# Next Practice Ideas
+
+- Multiple jobs
+- Matrix builds
+- Docker workflows
+- Kubernetes deployment
+- GitHub Secrets
+- Environment variables
+- DevSecOps pipelines

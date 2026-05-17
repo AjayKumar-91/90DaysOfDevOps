@@ -73,6 +73,11 @@ Go to GitHub → Actions tab and verify workflow is green.
 
 ---
 <img width="1600" height="723" alt="image" src="https://github.com/user-attachments/assets/114d0f02-3355-4467-b53a-258cc529c770" />
+<img width="1482" height="217" alt="image" src="https://github.com/user-attachments/assets/f6428f78-6f02-411c-aaec-bcf896a4b6c1" />
+<img width="1917" height="791" alt="image" src="https://github.com/user-attachments/assets/a62e09b1-27f2-417a-8e4e-dcdf95a1c4aa" />
+<img width="1917" height="911" alt="image" src="https://github.com/user-attachments/assets/cb227b09-cbae-4475-8bce-837af50c9713" />
+<img width="1906" height="907" alt="image" src="https://github.com/user-attachments/assets/8eb6436e-2679-49a7-95e7-5ee445896be4" />
+<img width="1917" height="922" alt="image" src="https://github.com/user-attachments/assets/911957ee-afeb-470a-bcc9-91095592784c" />
 
 
 Push it. Go to the Actions tab on GitHub and watch it run.

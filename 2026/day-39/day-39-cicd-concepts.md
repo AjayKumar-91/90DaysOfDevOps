@@ -331,7 +331,75 @@ Include at least 3 stages. Hand-drawn and photographed is perfectly fine.
    - How many jobs does it have?
    - What does it do? (best guess)
 
+# Task 5: Explore in the Wild
+
+## Repository Explored
+
+Repository Name: FastAPI
+
+GitHub Repository:
+https://github.com/fastapi/fastapi
+
 ---
 
+## Workflow Folder
+
+```text
+.github/workflows/
+```
+
+---
+
+## Workflow File Explored
+
+```text
+test.yml
+```
+
+---
+
+## What triggers it?
+
+- push
+- pull_request
+
+Example:
+
+```yaml
+on:
+  push:
+  pull_request:
+```
+
+---
+
+## How many jobs does it have?
+
+The workflow contains multiple jobs such as:
+- Testing
+- Validation
+- Linting
+
+---
+
+## What does it do?
+
+The workflow:
+- Installs dependencies
+- Runs tests
+- Checks code formatting
+- Validates pull requests
+
+This helps maintain code quality and stability.
+
+---
+
+# Key Takeaways
+
+- CI/CD automates software delivery
+- It reduces manual errors
+- It improves reliability
+- Pipelines help catch bugs early
+- Automation allows faster deployments
 
 ---

@@ -66,6 +66,8 @@ Result:
 Application running on Staging Server
 Include at least 3 stages. Hand-drawn and photographed is perfectly fine.
 
+
+
 ---
 
 ### Task 5: Explore in the Wild
@@ -79,18 +81,5 @@ Include at least 3 stages. Hand-drawn and photographed is perfectly fine.
 
 ---
 
-## Hints
-- CI/CD is a practice, not just a tool
-- GitHub Actions, Jenkins, GitLab CI, CircleCI — all are tools that implement CI/CD
-- A pipeline failing is not a problem — it's CI/CD doing its job
-
----
-
-## Documentation
-Create `day-39-cicd-concepts.md` with:
-- Your CI vs CD vs CD definitions
-- Pipeline anatomy notes
-- Your pipeline diagram
-- What you found in the open-source repo
 
 ---

@@ -7,16 +7,17 @@ github-actions-practice
 
 .github/workflows/hello.yml
 
-## Task 1: Set Up
+### Task 1: Set Up
+1. Create a new **public** GitHub repository called `github-actions-practice`
+2. Clone it locally
+3. Create the folder structure: `.github/workflows/`
+<img width="1917" height="947" alt="image" src="https://github.com/user-attachments/assets/c305173f-c77e-4462-a261-6f62066b8917" />
+<img width="1482" height="392" alt="image" src="https://github.com/user-attachments/assets/9d72d3b9-6be1-4392-a378-977054c9fa6c" />
 
-Create a new public GitHub repository called github-actions-practice
-
-Clone it locally
-
-Create the folder structure: .github/workflows/
 
 <img width="1600" height="807" alt="image" src="https://github.com/user-attachments/assets/4f08f3fb-3bf3-4c01-b0b7-ac89b0bf6b68" />
 
+---
 
 ## Task 2: Hello Workflow
 

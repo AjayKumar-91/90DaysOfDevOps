@@ -225,6 +225,8 @@ Add failing step:
   run: exit 1
 ```
 
+
+
 Example:
 
 ```yaml
@@ -249,6 +251,11 @@ jobs:
 ```
 
 Push changes and observe failed workflow in Actions tab.
+
+<img width="1917" height="1020" alt="image" src="https://github.com/user-attachments/assets/59874311-848f-458b-87e6-d829d64b3654" />
+<img width="1917" height="970" alt="image" src="https://github.com/user-attachments/assets/29d47724-cf62-4bf6-9791-aa1832d4aed8" />
+<img width="1917" height="967" alt="image" src="https://github.com/user-attachments/assets/337c5fc1-0028-42ed-b1ee-9fa93ca9e30c" />
+<img width="1917" height="911" alt="image" src="https://github.com/user-attachments/assets/caf170eb-deaa-4c1c-a9e0-727470fc8b53" />
 
 ---
 
@@ -280,6 +287,11 @@ Replace failing step:
 ```
 
 Push again.
+<img width="1917" height="1020" alt="image" src="https://github.com/user-attachments/assets/473b7853-02e6-44aa-88a7-acbc5a0cdbea" />
+<img width="1907" height="966" alt="image" src="https://github.com/user-attachments/assets/2c08e25d-3ad4-4a04-9091-36b4a392f5f1" />
+<img width="1917" height="962" alt="image" src="https://github.com/user-attachments/assets/558a23fc-d5ab-4bc6-8760-6fc3ffcad9aa" />
+<img width="1917" height="967" alt="image" src="https://github.com/user-attachments/assets/7ace71eb-9c29-4086-bbfd-1e79968f1edf" />
+
 
 ---
 

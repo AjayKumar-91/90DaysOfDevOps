@@ -20,7 +20,20 @@ github-actions-practice
 ---
 
 ## Task 2: Hello Workflow
+### Task 2: Hello Workflow
+Create `.github/workflows/hello.yml` with a workflow that:
+1. Triggers on every `push`
+2. Has one job called `greet`
+3. Runs on `ubuntu-latest`
+4. Has two steps:
+   - Step 1: Check out the code using `actions/checkout`
+   - Step 2: Print `Hello from GitHub Actions!`
 
+Push it. Go to the **Actions** tab on GitHub and watch it run.
+
+**Verify:** Is it green? Click into the job and read every step.
+
+---
 .github/workflows/hello.yml
 
 Create .github/workflows/hello.yml with a workflow that:

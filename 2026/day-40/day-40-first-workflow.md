@@ -19,8 +19,8 @@ github-actions-practice
 
 ---
 
+
 ## Task 2: Hello Workflow
-### Task 2: Hello Workflow
 Create `.github/workflows/hello.yml` with a workflow that:
 1. Triggers on every `push`
 2. Has one job called `greet`
@@ -33,39 +33,45 @@ Push it. Go to the **Actions** tab on GitHub and watch it run.
 
 **Verify:** Is it green? Click into the job and read every step.
 
----
+# Task 2: Hello Workflow
+
+Create file:
+
+```bash
 .github/workflows/hello.yml
+```
 
-Create .github/workflows/hello.yml with a workflow that:
+Add this workflow:
 
+```yaml
 name: Hello Workflow
 
-on: push
+on:
+  push:
 
 jobs:
   greet:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Say Hello
+      - name: Print Welcome Message
         run: echo "Hello from GitHub Actions!"
-        
+```
 
-Triggers on every push
+Push code:
 
-Has one job called greet
+```bash
+git add .
+git commit -m "Added hello workflow"
+git push origin main
+```
 
-Runs on ubuntu-latest
+Go to GitHub → Actions tab and verify workflow is green.
 
-Has two steps:
-
-Step 1: Check out the code using actions/checkout
-
-Step 2: Print Hello from GitHub Actions!
-
+---
 <img width="1600" height="723" alt="image" src="https://github.com/user-attachments/assets/114d0f02-3355-4467-b53a-258cc529c770" />
 
 

@@ -164,6 +164,8 @@ Example:
 - name: Print Message
 ```
 
+
+
 ---
 
 # Task 4: Add More Steps
@@ -207,6 +209,11 @@ git add .
 git commit -m "Added extra workflow steps"
 git push origin main
 ```
+
+<img width="1917" height="1020" alt="image" src="https://github.com/user-attachments/assets/826f3622-9804-40f1-9520-3996fc28783a" />
+
+<img width="1917" height="972" alt="image" src="https://github.com/user-attachments/assets/c2cd64d0-aff2-49f9-9d5b-17f088ffb55a" />
+<img width="1917" height="940" alt="image" src="https://github.com/user-attachments/assets/016985b9-5083-47b2-b9ba-54e7e796cd48" />
 
 ---
 # Task 5: Break Pipeline Intentionally

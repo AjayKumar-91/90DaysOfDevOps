@@ -66,6 +66,7 @@ Result:
 Application running on Staging Server
 Include at least 3 stages. Hand-drawn and photographed is perfectly fine.
 
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/4c78512a-697e-4906-b382-0c90934d15a5" />
 
 
 ---

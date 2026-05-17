@@ -86,79 +86,129 @@ Verify: Is it green? Click into the job and read every step.
 
 
 
-## Task 3: Understand the Anatomy
+# Task 3: Workflow Anatomy
 
-Look at your workflow file and write in your notes what each key does:
+## `on:`
+Defines when workflow runs.
 
-on: Defines when the workflow should run.
+Example:
 
-on: push
+```yaml
+on:
+  push:
+```
 
-Means workflow runs every time code is pushed to the repository.
+---
 
-jobs: Defines tasks executed in the workflow. # these are jobs inside the workflow
+## `jobs:`
+Contains all jobs.
+
+Example:
+
+```yaml
+jobs:
+```
+
+---
+
+## `runs-on:`
+Defines operating system runner.
+
+Example:
+
+```yaml
+runs-on: ubuntu-latest
+```
+
+---
+
+## `steps:`
+List of commands/actions executed one by one.
+
+Example:
+
+```yaml
+steps:
+```
+
+---
+
+## `uses:`
+Uses prebuilt GitHub Actions.
+
+Example:
+
+```yaml
+uses: actions/checkout@v4
+```
+
+---
+
+## `run:`
+Executes shell command.
+
+Example:
+
+```yaml
+run: echo "Hello"
+```
+
+---
+
+## `name:`
+Readable name visible in Actions UI.
+
+Example:
+
+```yaml
+- name: Print Message
+```
+
+---
+
+# Task 4: Add More Steps
+
+Update workflow:
+
+```yaml
+name: Hello Workflow
+
+on:
+  push:
 
 jobs:
-  greet: # this is the name of the job
+  greet:
+    runs-on: ubuntu-latest
 
-A workflow can have multiple jobs.
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-runs-on: Defines the virtual machine (runner) used.
+      - name: Print Welcome Message
+        run: echo "Hello from GitHub Actions!"
 
-Example:
+      - name: Print Current Date and Time
+        run: date
 
-# this is github runner, each job runs on a runner
+      - name: Print Branch Name
+        run: echo "Branch Name: ${{ github.ref_name }}"
 
-runs-on: ubuntu-latest 
+      - name: List Repository Files
+        run: ls -la
 
-GitHub provides a Linux environment to run the job.
+      - name: Print Runner OS
+        run: echo "Runner OS: $RUNNER_OS"
+```
 
-steps: Defines individual commands executed inside a job.
+Push again:
 
-Example:
+```bash
+git add .
+git commit -m "Added extra workflow steps"
+git push origin main
+```
 
-steps: 
-
-Each step runs sequentially.
-
-uses: Used to run prebuilt GitHub Actions.
-
-Example:
-
-uses: actions/checkout@v4
-
-This action downloads your repo code to the runner.
-
-run: Runs shell commands on the runner.
-
-Example:
-
-run: echo "Hello"
-
-
-name: (on a step) Adds a readable label for a step in the UI.
-
-Example:
-
-name: Checkout Repository
-
-
-## Task 4: Add More Steps
-
-Update hello.yml to also:
-
-Print the current date and time
-
-Print the name of the branch that triggered the run (hint: GitHub provides this as a variable)
-
-List the files in the repo
-
-Print the runner's operating system
-
-Push again — watch the new run.
-
-Updated hello.yml
-
+---
 
 
 

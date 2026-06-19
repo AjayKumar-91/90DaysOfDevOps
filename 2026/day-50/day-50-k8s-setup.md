@@ -20,8 +20,7 @@ Before touching a terminal, write down from memory:
 ---         
  
 2. Who created Kubernetes and what was it inspired by?
- + **Kubernetes was created by Google in 2014.**
-   
+     + **Kubernetes was created by Google in 2014.**
      + **It was inspired Borg tool which was automatically scalling and restarting the cantainer**
      + **later Google donates it to open-source**
      + **Today it is maintained by the Cloud Native Computing Foundation, which is part of the Linux Foundation.**
@@ -30,7 +29,7 @@ Before touching a terminal, write down from memory:
 ---
 
 3. What does the name "Kubernetes" mean?
- + **Kubernetes comes from the Greek word meaning**
+     + **Kubernetes comes from the Greek word meaning**
      + **Helmsman” or “Ship Pilot” (someone who steers a ship).**
      + **which means the cantainers are the ships and the steerign it is kubernetes**
      + **K8s is the short form of Kubernetes**

@@ -323,7 +323,11 @@ Worker Nodes run application workloads.
 kubectl communicates with the API Server.
 
 etcd stores cluster configuration and state.
+
 Scheduler decides pod placement.
+
 kubelet manages pod execution.
+
 kube-proxy handles networking.
+
 kind provides a lightweight local Kubernetes environment.

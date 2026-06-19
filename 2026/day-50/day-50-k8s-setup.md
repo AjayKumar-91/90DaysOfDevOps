@@ -309,9 +309,9 @@ Write down: What is a kubeconfig? Where is it stored on your machine?
 
 2. Kubeconfig is a configuration file used by kubectl to connect to a Kubernetes cluster. It stores cluster details,
 
-user credentials, and context information required for authentication and communication with the Kubernetes API server.
+   user credentials, and context information required for authentication and communication with the Kubernetes API server.
 
-By default, it is stored at ~/.kube/config in the user’s home directory.
+   By default, it is stored at ~/.kube/config in the user’s home directory.
 
 ```bash
 ~/.kube/config

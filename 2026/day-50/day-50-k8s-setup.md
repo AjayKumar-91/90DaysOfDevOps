@@ -123,9 +123,44 @@ Worker Node
       kube-proxy
 ```
 
-  
-- What happens if the API server goes down?
-- What happens if a worker node goes down?
+## What Happens if the API Server Goes Down?
+
+The Kubernetes API Server is the central communication hub of the cluster. All cluster operations pass through it.
+
+### Impact:
+
+* `kubectl` commands stop working because they cannot communicate with the cluster.
+* New Pods, Deployments, Services, or other resources cannot be created or modified.
+* Controllers and schedulers cannot update cluster state.
+* Existing running Pods continue to run because they are already managed by the kubelet on worker nodes.
+* Cluster state stored in etcd remains intact.
+
+### Summary:
+
+The cluster continues running existing workloads, but no management or orchestration operations can occur until the API Server is restored.
+
+---
+
+## What Happens if a Worker Node Goes Down?
+
+A worker node is responsible for running application Pods. If it becomes unavailable, Kubernetes detects the failure.
+
+### Impact:
+
+* The node status changes from **Ready** to **NotReady**.
+* Pods running on that node become unavailable.
+* The Controller Manager detects the node failure.
+* If the Pods are managed by a Deployment, ReplicaSet, or StatefulSet, Kubernetes automatically creates replacement Pods on healthy worker nodes.
+* Users may experience temporary service disruption until replacement Pods become available.
+
+### Example:
+
+If a Deployment is configured with **3 replicas** and one worker node fails, Kubernetes schedules replacement Pods on remaining healthy nodes to maintain the desired state.
+
+### Summary:
+
+Kubernetes provides self-healing capabilities. When a worker node fails, workloads are automatically rescheduled to healthy nodes whenever possible.
+
 
 ---
 

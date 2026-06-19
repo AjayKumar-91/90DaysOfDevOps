@@ -146,26 +146,74 @@ You can also use dry-run to generate YAML without creating anything:
 <img width="1720" height="352" alt="image" src="https://github.com/user-attachments/assets/f21a9f9b-6d3d-4d4c-b81a-b87848b68b83" />
 
 
-
-# Task 4: Validate Before Applying
-
+### Task 4: Validate Before Applying
 Before applying a manifest, you can validate it:
+
+```bash
+# Check if the YAML is valid without actually creating the resource
+kubectl apply -f nginx-pod.yaml --dry-run=client
+
+# Validate against the cluster's API (server-side validation)
+kubectl apply -f nginx-pod.yaml --dry-run=server
+```
+
+Now intentionally break your YAML (remove the `image` field or add an invalid field) and run dry-run again. See what error you get.
+
+**Verify:** What error does Kubernetes give when the image field is missing?
+
+---
 
 <img width="1291" height="95" alt="image" src="https://github.com/user-attachments/assets/db183d7f-61ea-44b0-9d34-21c8434d4433" />
 
 
-# Task 5: Pod Labels and Filtering
-
+### Task 5: Pod Labels and Filtering
 Labels are how Kubernetes organizes and selects resources. You added labels in your manifests — now use them:
+
+```bash
+# List all pods with their labels
+kubectl get pods --show-labels
+
+# Filter pods by label
+kubectl get pods -l app=nginx
+kubectl get pods -l environment=dev
+
+# Add a label to an existing pod
+kubectl label pod nginx-pod environment=production
+
+# Verify
+kubectl get pods --show-labels
+
+# Remove a label
+kubectl label pod nginx-pod environment-
+```
+
+Write a manifest for a third pod with at least 3 labels (app, environment, team). Apply it and practice filtering.
+
+---
 
 
 <img width="1545" height="466" alt="image" src="https://github.com/user-attachments/assets/0bef562d-041c-4f86-907c-3ea041b552bb" />
 
 
-
-# Task 6: Clean Up
-
+### Task 6: Clean Up
 Delete all the pods you created:
+
+```bash
+# Delete by name
+kubectl delete pod nginx-pod
+kubectl delete pod busybox-pod
+kubectl delete pod redis-pod
+
+# Or delete using the manifest file
+kubectl delete -f nginx-pod.yaml
+
+# Verify everything is gone
+kubectl get pods
+```
+
+Notice that when you delete a standalone Pod, it is gone forever. There is no controller to recreate it. This is why in production you use Deployments (coming on Day 52) instead of bare Pods.
+
+---
 
 <img width="1728" height="273" alt="image" src="https://github.com/user-attachments/assets/f38fd497-bf83-445c-ba07-21ccfb4cff26" />
 

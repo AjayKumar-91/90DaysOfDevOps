@@ -1,44 +1,53 @@
-# Kubernetes Manifest Basics
+## Challenge Tasks
 
+### Task 1: Create Your First Pod (Nginx)
+Create a file called `nginx-pod.yaml`:
 
-
-Every manifest has four required top-level fields:
-
-apiVersion: v1       # API version to use
-kind: Pod            # Resource type
-metadata:            # Identity of the resource
-  name: my-pod
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
   labels:
-    app: my-app
-spec:                # Desired state (containers, images, ports)
+    app: nginx
+spec:
   containers:
-    - name: my-container
-      image: nginx:latest
-      ports:
-        - containerPort: 80
-
-apiVersion → v1 for Pods
-
-kind → Pod, Deployment, Service, etc.
-
-metadata → name (required), labels (optional but useful for filtering)
-
-# Task 1: Create Your First Pod (Nginx)
+  - name: nginx
+    image: nginx:latest
+    ports:
+    - containerPort: 80
+```
 
 Apply it:
+```bash
 kubectl apply -f nginx-pod.yaml
+```
 
 Verify:
-
+```bash
 kubectl get pods
-
 kubectl get pods -o wide
+```
 
-Wait until the STATUS shows Running. Then explore:
-
+Wait until the STATUS shows `Running`. Then explore:
+```bash
 # Detailed info about the pod
-
 kubectl describe pod nginx-pod
+
+# Read the logs
+kubectl logs nginx-pod
+
+# Get a shell inside the container
+kubectl exec -it nginx-pod -- /bin/bash
+
+# Inside the container, run:
+curl localhost:80
+exit
+```
+
+**Verify:** Can you see the Nginx welcome page when you curl from inside the pod?
+
+---
 
 <img width="1870" height="855" alt="image" src="https://github.com/user-attachments/assets/ee66394e-a227-468f-9da2-ae2ebe3b5735" />
 

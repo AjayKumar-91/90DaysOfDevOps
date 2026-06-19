@@ -253,11 +253,20 @@ kubectl get namespaces
 # See ALL pods running in the cluster (across all namespaces)
 kubectl get pods -A
 ```
+<img width="1516" height="732" alt="image" src="https://github.com/user-attachments/assets/1cbed377-105c-4e5a-9109-ac4de6b053b2" />
+
+
+<img width="787" height="156" alt="image" src="https://github.com/user-attachments/assets/7da5569a-dd92-44ba-9e05-d7c1e1c83163" />
+
+<img width="1127" height="247" alt="image" src="https://github.com/user-attachments/assets/d7ad8c7f-acaa-4170-96aa-d9ab4aaf2401" />
+
 
 Look at the pods running in the `kube-system` namespace:
 ```bash
 kubectl get pods -n kube-system
 ```
+
+<img width="1071" height="246" alt="image" src="https://github.com/user-attachments/assets/8dcd3f86-14cf-4acd-bc01-7750a7e21884" />
 
 You should see pods like `etcd`, `kube-apiserver`, `kube-scheduler`, `kube-controller-manager`, `coredns`, and `kube-proxy`. These are the architecture components you drew in Task 2 — running as pods inside the cluster.
 

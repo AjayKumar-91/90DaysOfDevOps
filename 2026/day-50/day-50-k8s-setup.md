@@ -169,16 +169,24 @@ kubectl config view
 ```
 
 Write down: What is a kubeconfig? Where is it stored on your machine?
+
 A kubeconfig file contains cluster information, user credentials, and context definitions used by kubectl to connect to Kubernetes clusters.
+
 ```bash
 ~/.kube/config
 ```
 ---
+
 Key Learnings
+
 Kubernetes orchestrates containers across multiple machines.
+
 Control Plane manages the cluster state.
+
 Worker Nodes run application workloads.
+
 kubectl communicates with the API Server.
+
 etcd stores cluster configuration and state.
 Scheduler decides pod placement.
 kubelet manages pod execution.

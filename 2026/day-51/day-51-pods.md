@@ -74,34 +74,68 @@ exit
 
 
 
-# Task 2: Create a Custom Pod (BusyBox)
+### Task 2: Create a Custom Pod (BusyBox)
+Write a new manifest `busybox-pod.yaml` from scratch (do not copy-paste the nginx one):
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox-pod
+  labels:
+    app: busybox
+    environment: dev
+spec:
+  containers:
+  - name: busybox
+    image: busybox:latest
+    command: ["sh", "-c", "echo Hello from BusyBox && sleep 3600"]
+```
 
 Apply and verify:
-
+```bash
 kubectl apply -f busybox-pod.yaml
-
 kubectl get pods
-
 kubectl logs busybox-pod
+```
+
+Notice the `command` field — BusyBox does not run a long-lived server like Nginx. Without a command that keeps it running, the container would exit immediately and the pod would go into `CrashLoopBackOff`.
+
+**Verify:** Can you see "Hello from BusyBox" in the logs?
+
+---
 
 
 <img width="1257" height="196" alt="image" src="https://github.com/user-attachments/assets/c1fe2d91-79a2-4f9e-8bfc-a8762c39e32e" />
 
-# Task 3: Imperative vs Declarative
+### Task 3: Imperative vs Declarative
+You have been using the declarative approach (writing YAML, then `kubectl apply`). Kubernetes also supports imperative commands:
 
-## You have been using the declarative approach (writing YAML, then kubectl apply). Kubernetes also supports imperative commands:
-
-### Create a pod without a YAML file
-
+```bash
+# Create a pod without a YAML file
 kubectl run redis-pod --image=redis:latest
 
-### Check it
-
+# Check it
 kubectl get pods
+```
 
-### Now extract the YAML that Kubernetes generated:
-
+Now extract the YAML that Kubernetes generated:
+```bash
 kubectl get pod redis-pod -o yaml
+```
+
+Compare this output with your hand-written manifests. Notice how much extra metadata Kubernetes adds automatically (status, timestamps, uid, resource version).
+
+You can also use dry-run to generate YAML without creating anything:
+```bash
+kubectl run test-pod --image=nginx --dry-run=client -o yaml
+```
+
+This is a powerful trick — use it to quickly scaffold a manifest, then customize it.
+
+**Verify:** Save the dry-run output to a file and compare its structure with your nginx-pod.yaml. What fields are the same? What is different?
+
+---
 
 <img width="1918" height="930" alt="image" src="https://github.com/user-attachments/assets/4ba17c4a-8b3e-4385-8a23-0f2409df81cc" />
 

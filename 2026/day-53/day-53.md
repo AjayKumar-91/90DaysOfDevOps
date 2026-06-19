@@ -86,6 +86,8 @@ Observation:
 
 * Each Pod has its own IP.
 * These IPs may change after restart.
+  
+<img width="1521" height="195" alt="image" src="https://github.com/user-attachments/assets/d5f23d66-9ec2-484b-bac6-c5fc23e96341" />
 
 ---
 
@@ -158,6 +160,9 @@ Verification:
 * Service successfully routed traffic.
 * Requests are load-balanced across all Pods.
 
+<img width="1535" height="822" alt="image" src="https://github.com/user-attachments/assets/38b6f24b-a6e2-43a0-b725-a1216894d870" />
+
+
 ---
 
 # Task 3 – Service Discovery Using DNS
@@ -210,6 +215,10 @@ The DNS entry resolves to the same ClusterIP shown by:
 ```bash
 kubectl get services
 ```
+<img width="1527" height="622" alt="image" src="https://github.com/user-attachments/assets/70cc5beb-c019-47fb-a3b4-712f386404ca" />
+<img width="1527" height="532" alt="image" src="https://github.com/user-attachments/assets/25cf509e-ca7d-4210-a24c-bfcf6ec9c9ea" />
+<img width="1517" height="382" alt="image" src="https://github.com/user-attachments/assets/615a34d9-9ee7-4115-8e68-600f0cfb4085" />
+<img width="1535" height="116" alt="image" src="https://github.com/user-attachments/assets/b1305d6a-a66e-4738-8f75-c614d5715f31" />
 
 ---
 

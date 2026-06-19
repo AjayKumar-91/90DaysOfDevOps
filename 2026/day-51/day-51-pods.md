@@ -231,3 +231,17 @@ Notice that when you delete a standalone Pod, it is gone forever. There is no co
 
 spec → container definitions, image, ports, commands
 
+# Key Learnings
+
+- Learned Kubernetes manifest structure and the purpose of **`apiVersion`**, **`kind`**, **`metadata`**, and **`spec`**.
+- Created Pods manually using YAML manifest files.
+- Deployed and managed **Nginx** and **BusyBox** containers in Kubernetes.
+- Explored Pod debugging using **`kubectl logs`**, **`kubectl describe`**, and **`kubectl exec`**.
+- Understood the difference between **Imperative** (`kubectl run`) and **Declarative** (`kubectl apply -f`) approaches.
+- Practiced using **Labels** and **Selectors** to organize and filter Kubernetes resources.
+- Validated manifests using **client-side** and **server-side dry runs** before deployment.
+- Learned that standalone Pods are **not automatically recreated** after deletion.
+- Understood why **Deployments** are preferred over standalone Pods in production environments.
+
+spec → container definitions, image, ports, commands
+

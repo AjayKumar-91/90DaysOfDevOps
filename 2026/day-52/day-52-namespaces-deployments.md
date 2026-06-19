@@ -135,11 +135,11 @@ You should see 3 pods with names like `nginx-deployment-xxxxx-yyyyy`.
 
 ### Verify:
 
-READY — how many replicas are running vs desired
+READY — Pods currently ready to serve traffic.
 
-UP-TO-DATE — number of replicas updated to current spec
+UP-TO-DATE — Pods running the latest Deployment specification.
 
-AVAILABLE — ready to serve traffic
+AVAILABLE — Pods available and healthy for serving requests.
 
 
 # Task 4: Self-Healing — Delete a Pod and Watch It Come Back

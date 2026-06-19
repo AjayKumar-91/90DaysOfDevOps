@@ -5,12 +5,36 @@
 ### Task 1: Recall the Kubernetes Story
 Before touching a terminal, write down from memory:
 
+---
 1. Why was Kubernetes created? What problem does it solve that Docker alone cannot?
+   
+   Kubernetes solves scaling and restarting containers automatically, while earlier engineers had to do it manually.
+   
+   so basically kubernetes was created to solve container orchestration problems such as
+   
+            - scalling
+            - restarting
+            - Managing containers across multiple machines
+
+   Docker helps to create and run containers, but when run many containers across many servers, Docker alone cannot easily manage them.
+---         
+ 
 2. Who created Kubernetes and what was it inspired by?
+ + **Kubernetes was created by Google in 2014.**
+   
+     + **It was inspired Borg tool which was automatically scalling and restarting the cantainer**
+     + **later Google donates it to open-source**
+     + **Today it is maintained by the Cloud Native Computing Foundation, which is part of the Linux Foundation.**
+     + **And they named it as KUBERNETES**
+       
+---
+
 3. What does the name "Kubernetes" mean?
-
-Do not look anything up yet. Write what you remember from the session, then verify against the official docs.
-
+ + **Kubernetes comes from the Greek word meaning**
+     + **Helmsman” or “Ship Pilot” (someone who steers a ship).**
+     + **which means the cantainers are the ships and the steerign it is kubernetes**
+     + **K8s is the short form of Kubernetes**
+     + **There are 8 letters between K and S**
 ---
 
 ### Task 2: Draw the Kubernetes Architecture

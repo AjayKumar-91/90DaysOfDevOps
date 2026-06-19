@@ -275,6 +275,8 @@ minikube service web-app-nodeport --url
 
 Nginx welcome page displayed successfully.
 
+<img width="1516" height="172" alt="image" src="https://github.com/user-attachments/assets/7965b5b7-2181-40d6-ba45-70d8f93281d2" />
+
 ---
 
 # Task 5 – LoadBalancer Service

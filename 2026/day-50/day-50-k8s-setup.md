@@ -301,6 +301,7 @@ kubectl config get-contexts
 # See the full kubeconfig
 kubectl config view
 ```
+<img width="1515" height="857" alt="image" src="https://github.com/user-attachments/assets/408a119d-f161-4b8e-aba3-01c3884fefbd" />
 
 Write down: What is a kubeconfig? Where is it stored on your machine?
 

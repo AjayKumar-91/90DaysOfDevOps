@@ -185,6 +185,7 @@ Verify:
 ```bash
 kubectl version --client
 ```
+<img width="1222" height="172" alt="image" src="https://github.com/user-attachments/assets/72a1cef9-7c6b-41f5-aa6d-58eef447ff19" />
 
 ---
 
@@ -227,6 +228,7 @@ minikube start
 kubectl cluster-info
 kubectl get nodes
 ```
+<img width="1266" height="207" alt="image" src="https://github.com/user-attachments/assets/2e7de682-ef0c-47de-9603-b5671ccc3f56" />
 
 Write down: Which one did you choose and why?
 

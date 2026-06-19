@@ -52,6 +52,78 @@ From memory, draw or describe the Kubernetes architecture. Your diagram should i
 
 After drawing, verify your understanding:
 - What happens when you run `kubectl apply -f pod.yaml`? Trace the request through each component.
+## 3. What Happens During `kubectl apply -f pod.yaml`?
+
+When a user executes:
+
+```bash
+kubectl apply -f pod.yaml
+```
+
+the following sequence of events takes place inside the Kubernetes cluster:
+
+### Step 1: kubectl Sends the Request
+
+`kubectl` reads the `pod.yaml` manifest and sends an API request to the Kubernetes API Server.
+
+### Step 2: API Server Validates the Request
+
+The API Server validates the YAML file and checks whether the resource definition is correct.
+
+### Step 3: Desired State is Stored in etcd
+
+After validation, the API Server stores the desired state of the Pod in **etcd**, Kubernetes' distributed key-value database.
+
+### Step 4: Scheduler Selects a Node
+
+The **kube-scheduler** detects that a new Pod needs to be created and chooses the most suitable worker node based on available resources and scheduling policies.
+
+### Step 5: kubelet Receives Instructions
+
+The **kubelet** running on the selected worker node notices the new Pod assignment and communicates with the container runtime.
+
+### Step 6: Container Runtime Starts the Container
+
+The container runtime (such as **containerd** or **CRI-O**) pulls the required container image (if not already present) and starts the container.
+
+### Step 7: Networking is Configured
+
+**kube-proxy** configures the necessary networking rules so the Pod can communicate with other Pods and Services within the cluster.
+
+### Step 8: Pod Becomes Running
+
+Once the container is successfully started and passes any health checks, the Pod status changes to **Running**.
+
+### Request Flow Diagram
+
+```text
+kubectl
+   |
+   v
+API Server
+   |
+   v
+etcd (stores desired state)
+   |
+   v
+Scheduler
+   |
+   v
+Worker Node
+   |
+   +--> kubelet
+            |
+            v
+   Container Runtime
+            |
+            v
+          Pod
+            |
+            v
+      kube-proxy
+```
+
+  
 - What happens if the API server goes down?
 - What happens if a worker node goes down?
 

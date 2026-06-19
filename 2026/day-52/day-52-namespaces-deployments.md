@@ -1,4 +1,4 @@
-### Task 1: Explore Default Namespaces
+# Task 1: Explore Default Namespaces
 Kubernetes comes with built-in namespaces. List them:
 
 ```bash
@@ -30,7 +30,7 @@ These are the control plane components keeping your cluster alive. Do not touch 
 Count how many pods are running. These are core control-plane components — do not modify them.
 
 
-### Task 2: Create and Use Custom Namespaces
+# Task 2: Create and Use Custom Namespaces
 Create two namespaces — one for a development environment and one for staging:
 
 ```bash
@@ -77,7 +77,7 @@ Notice that `kubectl get pods` without `-n` only shows the `default` namespace. 
 
 ### Verify: Running kubectl get pods without -n shows only the default namespace. -A shows all.
 
-### Task 3: Create Your First Deployment
+# Task 3: Create Your First Deployment
 A Deployment tells Kubernetes: "I want X replicas of this Pod running at all times." If a Pod crashes, the Deployment controller recreates it automatically.
 
 Create a file `nginx-deployment.yaml`:
@@ -142,7 +142,7 @@ UP-TO-DATE — number of replicas updated to current spec
 AVAILABLE — ready to serve traffic
 
 
-### Task 4: Self-Healing — Delete a Pod and Watch It Come Back
+# Task 4: Self-Healing — Delete a Pod and Watch It Come Back
 This is the key difference between a Deployment and a standalone Pod.
 
 ```bash
@@ -179,7 +179,7 @@ The old pod is not restored, a new one is created
 Deployment ensures the desired state (3 pods), not the exact same pods
 
 
-### Task 5: Scale the Deployment
+# Task 5: Scale the Deployment
 Change the number of replicas:
 
 ```bash
@@ -210,7 +210,7 @@ Desired state changed to 2 pods
 
 Kubernetes (via ReplicaSet) removes 3 pods automatically
 
-### Task 6: Rolling Update
+# Task 6: Rolling Update
 Update the Nginx image version to trigger a rolling update:
 
 ```bash
@@ -253,7 +253,7 @@ kubectl describe deployment nginx-deployment -n dev | grep Image
 
 ### Rollback always restores the previous stable version of the Deployment
 
-### Task 7: Clean Up
+# Task 7: Clean Up
 ```bash
 kubectl delete deployment nginx-deployment -n dev
 kubectl delete pod nginx-dev -n dev

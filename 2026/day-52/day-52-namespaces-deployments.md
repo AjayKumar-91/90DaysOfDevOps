@@ -293,10 +293,6 @@ EVERYTHING inside that namespace
 
 This is called cascading deletion.
 
-
-
-
-
 Namespaces — organize resources, prevent collisions, isolate environments.
 
 Deployment Manifest — explains replicas, selector, template, containers.
@@ -310,4 +306,23 @@ Rolling Updates & Rollbacks — update containers with zero downtime.
 Screenshots — include kubectl get deployments -n dev and kubectl get pods -A.
 
 
+# Key Learnings
 
+- Learned Kubernetes Namespace concepts and resource isolation.
+- Explored built-in namespaces.
+- Created custom namespaces using imperative and declarative methods.
+- Ran Pods inside different namespaces.
+- Created a Deployment with multiple replicas.
+- Understood Deployment manifest structure.
+- Learned self-healing behavior of Deployments.
+- Scaled Deployments using imperative and declarative methods.
+- Performed rolling updates with zero downtime.
+- Rolled back Deployment revisions.
+- Explored ReplicaSets created by Deployments.
+- Learned cleanup of namespaces and resources.
+
+---
+
+# Conclusion
+
+Namespaces provide logical separation of resources within a Kubernetes cluster, while Deployments provide production-grade application management through self-healing, scaling, rolling updates, and rollback capabilities. Deployments are the recommended way to run applications in Kubernetes because they ensure the desired application state is always maintained.

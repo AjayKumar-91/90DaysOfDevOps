@@ -469,6 +469,9 @@ Insert Screenshot Here
 ```text
 [screenshot-dns-test.png]
 ```
+<img width="1276" height="800" alt="image" src="https://github.com/user-attachments/assets/c43efd9b-68f9-48f3-a789-4227514652bf" />
+<img width="1352" height="772" alt="image" src="https://github.com/user-attachments/assets/418b7d6a-ad0e-493f-afe5-b33ade07b9db" />
+<img width="1350" height="772" alt="image" src="https://github.com/user-attachments/assets/911bbc24-a20a-45ff-9d1d-ccfdb70d7cbd" />
 
 ---
 

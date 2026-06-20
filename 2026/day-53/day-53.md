@@ -263,7 +263,9 @@ Docker Desktop:
 
 ```bash
 curl http://localhost:30080
+curl http://127.0.0.1:45841/
 ```
+<img width="1917" height="341" alt="image" src="https://github.com/user-attachments/assets/33e6c130-a469-43cc-9287-dd20a2524484" />
 
 Minikube:
 

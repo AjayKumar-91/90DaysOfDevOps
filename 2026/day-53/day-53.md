@@ -86,7 +86,9 @@ Observation:
 
 * Each Pod has its own IP.
 * These IPs may change after restart.
-  
+<img width="1517" height="797" alt="image" src="https://github.com/user-attachments/assets/78f9c4c1-b2ae-4018-b2d3-4027e008781a" />
+ <img width="1332" height="127" alt="image" src="https://github.com/user-attachments/assets/e3621456-7723-4211-98b8-05f3a30f9fae" />
+
 <img width="1521" height="195" alt="image" src="https://github.com/user-attachments/assets/d5f23d66-9ec2-484b-bac6-c5fc23e96341" />
 
 ---
@@ -161,6 +163,7 @@ Verification:
 * Requests are load-balanced across all Pods.
 
 <img width="1535" height="822" alt="image" src="https://github.com/user-attachments/assets/38b6f24b-a6e2-43a0-b725-a1216894d870" />
+<img width="1506" height="156" alt="image" src="https://github.com/user-attachments/assets/a8c66204-fdfd-4fab-8e28-1ab6649453a4" />
 
 
 ---

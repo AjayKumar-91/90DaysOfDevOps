@@ -99,6 +99,7 @@ Docker Desktop: curl http://localhost:30080
 <img width="1918" height="947" alt="image" src="https://github.com/user-attachments/assets/2538c158-6b82-43e7-a537-b5066cfcbb29" />
 
 You should see the Nginx welcome page from outside the cluster.
+<img width="1917" height="341" alt="image" src="https://github.com/user-attachments/assets/341d0f19-6b4b-484d-80f7-cc3fff46e779" />
 
 
 # Task 5: LoadBalancer Service (Cloud External Access)

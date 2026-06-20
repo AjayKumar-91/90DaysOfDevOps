@@ -503,6 +503,7 @@ kubernetes   ClusterIP   10.96.0.1
 ```
 
 Only the default Kubernetes Service remains.
+<img width="1512" height="347" alt="image" src="https://github.com/user-attachments/assets/24d9c2c7-84cb-4419-b476-66c55425db51" />
 
 ---
 

@@ -44,6 +44,8 @@ data:
 ### Observation
 
 ConfigMap values are stored as plain text and are not encrypted.
+<img width="1691" height="657" alt="image" src="https://github.com/user-attachments/assets/c4c38cc6-cdd6-40f4-9f82-f63e4e047a28" />
+<img width="1542" height="296" alt="image" src="https://github.com/user-attachments/assets/6c75b78f-e716-4f88-891f-77f2a9fab44d" />
 
 ---
 
@@ -91,6 +93,7 @@ data:
         }
     }
 ```
+<img width="1287" height="336" alt="image" src="https://github.com/user-attachments/assets/599c9c8b-1d71-4cbb-a858-2a4ba464128a" />
 
 ---
 
@@ -139,6 +142,7 @@ APP_ENV=production
 APP_DEBUG=false
 APP_PORT=8080
 ```
+<img width="1407" height="447" alt="image" src="https://github.com/user-attachments/assets/38412de3-4e08-4881-b85f-baa615822cf8" />
 
 ---
 
@@ -182,6 +186,7 @@ Expected:
 ```text
 healthy
 ```
+<img width="1672" height="120" alt="image" src="https://github.com/user-attachments/assets/ef22b1c3-2c46-4c95-bd8a-028834e80533" />
 
 ---
 
@@ -224,6 +229,8 @@ s3cureP@ssw0rd
 ### Observation
 
 Base64 is only encoding. It does not provide security because anyone with access can decode the value.
+
+<img width="1482" height="432" alt="image" src="https://github.com/user-attachments/assets/6bf2503a-b9ca-4108-b992-295b856e0ba6" />
 
 ---
 
@@ -309,6 +316,9 @@ s3cureP@ssw0rd
 ### Observation
 
 Mounted Secret files contain plaintext values, not Base64-encoded values.
+
+
+<img width="1337" height="246" alt="image" src="https://github.com/user-attachments/assets/f372d1bf-5b59-4598-a6aa-05d6e49e80ab" />
 
 ---
 

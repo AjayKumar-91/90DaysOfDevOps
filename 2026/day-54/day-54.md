@@ -113,12 +113,7 @@ spec:
   containers:
   - name: busybox
     image: busybox
-    command:
-    - sh
-    - -c
-    - |
-      env | grep APP_
-      sleep 3600
+    command: ["sh", "-c", "echo APP_ENV=$APP_ENV; echo APP_DEBUG=$APP_DEBUG; echo APP_PORT=$APP_PORT; sleep 3600"]
     envFrom:
     - configMapRef:
         name: app-config
@@ -160,12 +155,15 @@ spec:
   containers:
   - name: nginx
     image: nginx
+    ports:
+    - containerPort: 80
+
     volumeMounts:
-    - name: nginx-config
+    - name: nginx-config-volume
       mountPath: /etc/nginx/conf.d
 
   volumes:
-  - name: nginx-config
+  - name: nginx-config-volume
     configMap:
       name: nginx-config
 ```

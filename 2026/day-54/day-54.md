@@ -363,15 +363,7 @@ spec:
   containers:
   - name: busybox
     image: busybox
-    command:
-    - sh
-    - -c
-    - |
-      while true
-      do
-        cat /config/message
-        sleep 5
-      done
+    command: ["sh", "-c", "while true; do cat /etc/live-config/message; echo ''; sleep 5; done"]
 
     volumeMounts:
     - name: config-volume

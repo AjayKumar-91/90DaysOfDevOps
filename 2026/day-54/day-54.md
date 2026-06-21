@@ -525,6 +525,7 @@ kubectl delete configmap live-config
 
 kubectl delete secret db-credentials
 ```
+<img width="1352" height="192" alt="image" src="https://github.com/user-attachments/assets/cbe0d65c-28c3-4220-a838-7964c3d29498" />
 
 ---
 

@@ -405,6 +405,7 @@ world
 world
 world
 ```
+<img width="1346" height="527" alt="image" src="https://github.com/user-attachments/assets/e68c753d-5772-43c9-aa29-525da7721ce4" />
 
 ### Observation
 

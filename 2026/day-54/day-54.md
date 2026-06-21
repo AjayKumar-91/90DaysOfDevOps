@@ -92,7 +92,7 @@ data:
         }
     }
 ```
-<img width="1287" height="336" alt="image" src="https://github.com/user-attachments/assets/599c9c8b-1d71-4cbb-a858-2a4ba464128a" />
+
 <img width="1332" height="461" alt="image" src="https://github.com/user-attachments/assets/ea48572d-5d0d-43df-b5a5-092d6aa54e80" />
 
 ---

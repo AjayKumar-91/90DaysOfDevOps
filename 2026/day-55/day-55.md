@@ -145,6 +145,7 @@ Example:
 NAME        CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS
 manual-pv   1Gi        RWO            Retain           Available
 ```
+<img width="1367" height="180" alt="image" src="https://github.com/user-attachments/assets/72b2bcfe-ba0c-4a3b-b45c-bd9568ed6f8d" />
 
 ### Verification
 

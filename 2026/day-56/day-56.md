@@ -141,6 +141,7 @@ Cleanup:
 ```bash
 kubectl delete deployment nginx-deploy
 ```
+<img width="1347" height="477" alt="image" src="https://github.com/user-attachments/assets/e537c0ae-fcda-42b7-b1eb-63b396700a48" />
 
 ---
 

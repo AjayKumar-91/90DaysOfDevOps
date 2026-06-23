@@ -388,6 +388,7 @@ Data from web-0
 ### Result
 
 Data remains available because the Pod reconnects to the same PVC.
+<img width="1355" height="451" alt="image" src="https://github.com/user-attachments/assets/9f2cf63f-f2d4-418f-8474-ebb6418a3285" />
 
 ---
 

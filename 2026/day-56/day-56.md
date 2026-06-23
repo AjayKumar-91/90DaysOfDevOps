@@ -190,6 +190,7 @@ nginx-headless   ClusterIP   None
 Verification:
 
 **CLUSTER-IP = None**
+<img width="1374" height="250" alt="image" src="https://github.com/user-attachments/assets/23572e17-25a1-4fec-989a-f90bdce8c238" />
 
 ---
 

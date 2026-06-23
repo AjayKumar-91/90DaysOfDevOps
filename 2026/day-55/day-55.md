@@ -474,6 +474,8 @@ Two PVs now exist:
 | manual-pv       | Static  |
 | pvc-a1b2c3d4... | Dynamic |
 
+<img width="1356" height="291" alt="image" src="https://github.com/user-attachments/assets/78173307-dd57-410a-af54-e2580e801b3a" />
+
 ---
 
 # Using Dynamic PVC in a Pod
@@ -517,6 +519,7 @@ kubectl exec -it dynamic-pod -- cat /data/test.txt
 ```
 
 Data persists successfully.
+<img width="1351" height="132" alt="image" src="https://github.com/user-attachments/assets/c0afbfeb-984c-457a-979c-6b0a89fc7840" />
 
 ---
 
@@ -547,6 +550,7 @@ manual-pv    Released
 ```
 
 Dynamic PV is already deleted.
+<img width="1325" height="227" alt="image" src="https://github.com/user-attachments/assets/39056345-40b6-40f6-88f0-3c0e55849473" />
 
 ---
 

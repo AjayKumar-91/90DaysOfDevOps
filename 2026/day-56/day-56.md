@@ -285,6 +285,7 @@ Example:
 ```text
 web-data-web-0
 ```
+<img width="1337" height="267" alt="image" src="https://github.com/user-attachments/assets/e68561a4-1862-42ed-8cc2-88b95790d5c1" />
 
 ---
 

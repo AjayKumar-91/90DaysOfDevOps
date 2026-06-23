@@ -117,12 +117,11 @@ metadata:
 spec:
   capacity:
     storage: 1Gi
-
+  storageClassName: manual
+  
   accessModes:
     - ReadWriteOnce
-
   persistentVolumeReclaimPolicy: Retain
-
   hostPath:
     path: /tmp/k8s-pv-data
 ```
@@ -145,7 +144,8 @@ Example:
 NAME        CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS
 manual-pv   1Gi        RWO            Retain           Available
 ```
-<img width="1367" height="180" alt="image" src="https://github.com/user-attachments/assets/72b2bcfe-ba0c-4a3b-b45c-bd9568ed6f8d" />
+<img width="1357" height="167" alt="image" src="https://github.com/user-attachments/assets/645a0734-410b-4435-ab38-e1d8ec6e1999" />
+
 
 ### Verification
 
@@ -193,7 +193,8 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
-
+  storageClassName: manual
+  
   resources:
     requests:
       storage: 500Mi
@@ -227,6 +228,8 @@ kubectl get pv
 NAME        STATUS
 manual-pv   Bound
 ```
+<img width="1355" height="342" alt="image" src="https://github.com/user-attachments/assets/6bd22962-73b9-49e9-98d3-1ee1d1e32a48" />
+
 
 ### Verification
 

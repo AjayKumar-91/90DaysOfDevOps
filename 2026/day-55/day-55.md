@@ -368,6 +368,7 @@ Provisioner:          rancher.io/local-path
 ReclaimPolicy:        Delete
 VolumeBindingMode:    WaitForFirstConsumer
 ```
+<img width="1355" height="407" alt="image" src="https://github.com/user-attachments/assets/5f6e4c18-04f2-4548-b9a1-eeafce76a295" />
 
 ### Important Fields
 

@@ -336,6 +336,7 @@ kubectl get pods -o wide
 Verification:
 
 The resolved DNS IP should match the Pod IP.
+<img width="1355" height="684" alt="image" src="https://github.com/user-attachments/assets/7b148155-0d7c-4c5b-a2bf-ac73e5815a4d" />
 
 ---
 

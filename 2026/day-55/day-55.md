@@ -228,7 +228,8 @@ kubectl get pv
 NAME        STATUS
 manual-pv   Bound
 ```
-<img width="1355" height="342" alt="image" src="https://github.com/user-attachments/assets/6bd22962-73b9-49e9-98d3-1ee1d1e32a48" />
+<img width="1355" height="342" alt="image" src="https://github.com/user-attachments/assets/246f8320-f7df-4897-85ab-7066a37cba08" />
+
 
 
 ### Verification

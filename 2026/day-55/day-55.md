@@ -91,6 +91,7 @@ Example:
 ```text
 Created at Thu Jun 19 10:18:41 UTC 2026
 ```
+<img width="1361" height="291" alt="image" src="https://github.com/user-attachments/assets/a912cf66-3607-4614-9436-50f91ccada46" />
 
 ## Observation
 

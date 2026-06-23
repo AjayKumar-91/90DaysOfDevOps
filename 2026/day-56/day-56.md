@@ -441,6 +441,7 @@ Verification:
 Even after scaling down to 3 Pods, all 5 PVCs remain.
 
 This protects data from accidental loss.
+<img width="1342" height="655" alt="image" src="https://github.com/user-attachments/assets/d36741d7-3f3a-4101-88b7-a28020a2eb97" />
 
 ---
 
